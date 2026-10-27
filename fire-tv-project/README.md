@@ -7,6 +7,7 @@ New project started 2026-10-27 from a photo of the Fire TV "About" screen.
 | Field | Value |
 |---|---|
 | Device Name | Jennifer's TV |
+| IP Address | 192.168.1.227 (Wi-Fi GoodMorningSummit) |
 | Storage Capacity | 3.59 GB available (total cut off in photo) |
 | Amazon Account | Jennifer Haag |
 | Software Version | Fire OS 6.7.1.1 (NS6711/5898) |

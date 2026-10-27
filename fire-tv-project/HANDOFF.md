@@ -8,8 +8,8 @@ the LAN. Everything below is already decided; do not re-ask.
 - Insignia NS-32F202NA22, 32" 720p Fire TV Edition (2022), Fire OS 6.7.1.1
 - Amazon account on it: Jennifer Haag. Device name "Jennifer's TV".
 - ADB debugging is ON. Port 5555, classic adb connect (no pairing code).
-- IP address: user has not given it. Find it with adb/02_connect_tv.sh or ask;
-  it is under Settings > My Fire TV > About > Network on the TV.
+- IP address: 192.168.1.227 (Wi-Fi "GoodMorningSummit", gateway 192.168.1.1). Connect with: adb connect 192.168.1.227:5555
+
 - Symptoms: laggy, "buggy". Goals: debug, free channels, cleaner UI, up to date.
 
 ## Hard rules from the user
