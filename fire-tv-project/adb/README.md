@@ -21,3 +21,15 @@ The IP address is under Settings > My Fire TV > About > Network.
 Package categories are a first pass from known Fire OS package names. Anything
 the script is not sure about goes in REVIEW, not in bloat. Nothing is disabled
 until you say so, and nothing is ever uninstalled.
+
+## Protected features
+
+Family photos and the screen saver stay. The audit script has a protected list
+(Amazon Photos, the Fire TV screensaver, cloud drive and account sync services)
+that is checked before any other rule, so those packages always land in
+Required and are never proposed for disabling. The undo script also always
+re-enables them.
+
+Keep these TV settings as they are:
+- Settings > Display & Sounds > Screen Saver (album, slide style, start time)
+- Amazon Photos app signed in to the same account the photos live on

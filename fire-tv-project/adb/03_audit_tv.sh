@@ -37,6 +37,9 @@ $A shell settings list system > "$OUT/settings_system.txt" 2>/dev/null
 
 # ---- 3. Categorize ---------------------------------------------------------
 # First-pass rules. Anything not matched lands in REVIEW so nothing is guessed.
+# User rule: family photos and screen saver must keep working. These are checked
+# FIRST and can never be classified as bloat, whatever the other patterns say.
+KEEP_RE='^(com\.amazon\.bueller\.photos|com\.amazon\.photos|com\.amazon\.clouddrive|com\.amazon\.drive|com\.amazon\.ftv\.screensaver|com\.amazon\.tv\.screensaver|com\.amazon\.tv\.alexaphotos|com\.amazon\.dcp$|com\.amazon\.dcp\.|com\.amazon\.sync\.service|com\.amazon\.identity|com\.android\.providers\.media|com\.android\.providers\.downloads|com\.amazon\.tv\.launcher$)'
 REQUIRED_RE='^(android|com\.android\.|com\.amazon\.tv\.launcher$|com\.amazon\.tv\.settings|com\.amazon\.tv\.devicecontrolsettings|com\.amazon\.device\.settings|com\.amazon\.dcp|com\.amazon\.sync|com\.amazon\.venezia|com\.amazon\.tv\.parentalcontrols|com\.amazon\.tv\.oobe|com\.amazon\.alta\.h2clientservice|com\.amazon\.identity|com\.amazon\.firebat|com\.amazon\.imp|com\.amazon\.tv\.ime|com\.amazon\.tv\.input|com\.amazon\.tv\.livetv|com\.amazon\.tv\.remote|com\.amazon\.bluetoothdialer|com\.amazon\.device\.bluetooth|com\.amazon\.tv\.fw|com\.amazon\.device\.sale|com\.amazon\.tv\.settings\.|com\.amazon\.acos|com\.amazon\.aca$|com\.amazon\.ssm$|com\.amazon\.ssmsys$|com\.amazon\.tv\.nimh|com\.amazon\.device\.messaging|com\.amazon\.providers|com\.amazon\.webview|com\.amazon\.vizzini|com\.amazon\.tv\.ottssocompanionapp|com\.amazon\.ftv\.screensaver|com\.amazon\.tv\.legacyapis|com\.amazon\.platform|com\.amazon\.tv\.releasenotes|com\.svox|com\.insignia|com\.amazon\.cpl|com\.amazon\.ags|com\.amazon\.tv\.alexadevicecontrols|com\.amazon\.alexa|com\.amazon\.tv\.alexa)'
 STREAM_RE='^(com\.netflix|com\.google\.android\.youtube|com\.amazon\.firetv\.youtube|com\.amazon\.avod|com\.amazon\.firebat\.|com\.hulu|com\.disney|tv\.pluto|com\.tubitv|com\.roku|com\.plexapp|com\.spotify|com\.hbo|com\.wbd|com\.peacocktv|com\.cbs|com\.paramount|com\.sling|com\.xumo|com\.crackle|org\.pbs|com\.espn|com\.apple\.atve|com\.twitch|com\.amazon\.tv\.livetv|com\.philo|com\.fubo|com\.crunchyroll|com\.amazon\.music|com\.amazon\.bueller\.music|com\.amazon\.cloud9|com\.amazon\.bueller\.photos|com\.iheart|com\.pandora|com\.tidal|com\.plex)'
 BLOAT_RE='^(com\.amazon\.tv\.legal\.notices|com\.amazon\.tv\.fw\.metrics|com\.amazon\.device\.metrics|com\.amazon\.client\.metrics|com\.amazon\.hedwig|com\.amazon\.tv\.support|com\.amazon\.tv\.csapp|com\.amazon\.wifilocker|com\.amazon\.advertisingidsettings|com\.amazon\.ssm\.|com\.amazon\.sharingservice|com\.amazon\.kindle|com\.amazon\.shopping|com\.amazon\.tv\.alexanotification|com\.amazon\.tv\.alexaalerts|com\.amazon\.device\.crashmanager|com\.amazon\.device\.logmanager|com\.amazon\.logan|com\.amazon\.tv\.ottssocompanionapp\.metrics|com\.ivona|com\.amazon\.ftv\.collect|com\.amazon\.tv\.promotions|com\.amazon\.tv\.setupcompanion|com\.amazon\.recess|com\.amazon\.tv\.whisperplay|com\.amazon\.whisperlink|com\.amazon\.whisperplay|com\.amazon\.tv\.notification|com\.amazon.ftv\.notifications)'
@@ -46,7 +49,8 @@ UPDATER_RE='^(com\.amazon\.tv\.forcedotaupdater|com\.amazon\.device\.software\.o
 while read -r pkg; do
   [ -z "$pkg" ] && continue
   tp=""; grep -qx "$pkg" "$OUT/packages_thirdparty.txt" && tp=" (user-installed)"
-  if   echo "$pkg" | grep -Eq "$UPDATER_RE";  then echo "$pkg" >> "$OUT/cat_updater.txt"
+  if   echo "$pkg" | grep -Eq "$KEEP_RE";     then echo "$pkg  (PROTECTED: photos/screensaver)" >> "$OUT/cat_required.txt"
+  elif echo "$pkg" | grep -Eq "$UPDATER_RE";  then echo "$pkg" >> "$OUT/cat_updater.txt"
   elif echo "$pkg" | grep -Eq "$STREAM_RE";   then echo "$pkg$tp" >> "$OUT/cat_streaming.txt"
   elif [ -n "$tp" ];                          then echo "$pkg$tp" >> "$OUT/cat_streaming.txt"
   elif echo "$pkg" | grep -Eq "$BLOAT_RE";    then echo "$pkg" >> "$OUT/cat_bloat.txt"
@@ -65,7 +69,9 @@ UNDO="$HERE/../undo_backup.sh"
   echo "echo 'Restoring package states...'"
   while read -r pkg; do
     [ -z "$pkg" ] && continue
-    if grep -qx "$pkg" "$OUT/packages_disabled.txt"; then
+    if echo "$pkg" | grep -Eq "$KEEP_RE"; then
+      echo "\$A shell pm enable $pkg >/dev/null 2>&1 || true   # protected: photos/screensaver"
+    elif grep -qx "$pkg" "$OUT/packages_disabled.txt"; then
       echo "\$A shell pm disable-user --user 0 $pkg >/dev/null 2>&1 || true   # was disabled"
     else
       echo "\$A shell pm enable $pkg >/dev/null 2>&1 || true"

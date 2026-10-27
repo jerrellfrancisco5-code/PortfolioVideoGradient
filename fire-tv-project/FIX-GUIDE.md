@@ -36,6 +36,7 @@ below help a lot, but the hardware is the ceiling.
 
 ## 2. Free channels (all legal, no account cost)
 
+- Keep: Amazon Photos and the screen saver are protected; do not uninstall or clear data on them.
 - Antenna: this TV has a built-in tuner. A cheap flat indoor antenna on the coax
   input gives local broadcast channels (ABC, CBS, NBC, FOX, PBS) free in HD.
   Settings > Live TV > Channel Scan. They show up in the Fire TV Live tab guide.
