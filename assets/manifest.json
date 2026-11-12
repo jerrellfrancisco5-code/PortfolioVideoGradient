@@ -423,6 +423,166 @@
    "w": 540,
    "h": 675,
    "bytes": 2705794
+  },
+  "loops/loop_absurdist_turntable.mp4": {
+   "w": 960,
+   "h": 1200,
+   "bytes": 1175257
+  },
+  "loops/loop_centrerotation.mp4": {
+   "w": 960,
+   "h": 960,
+   "bytes": 1450091
+  },
+  "loops/loop_domino.mp4": {
+   "w": 960,
+   "h": 540,
+   "bytes": 523048
+  },
+  "loops/loop_gravityfall.mp4": {
+   "w": 960,
+   "h": 540,
+   "bytes": 374793
+  },
+  "loops/loop_hermetic_turntable.mp4": {
+   "w": 960,
+   "h": 1200,
+   "bytes": 1063565
+  },
+  "loops/loop_lidstamp.mp4": {
+   "w": 960,
+   "h": 960,
+   "bytes": 1569172
+  },
+  "loops/loop_lightsweep.mp4": {
+   "w": 960,
+   "h": 540,
+   "bytes": 351367
+  },
+  "loops/loop_nihilist_turntable.mp4": {
+   "w": 960,
+   "h": 1200,
+   "bytes": 1153754
+  },
+  "loops/loop_stoic_turntable.mp4": {
+   "w": 960,
+   "h": 1200,
+   "bytes": 1117895
+  },
+  "loops/loop_studiofan.mp4": {
+   "w": 960,
+   "h": 1200,
+   "bytes": 1001716
+  },
+  "loops/loop_wave.mp4": {
+   "w": 960,
+   "h": 1200,
+   "bytes": 2662156
+  },
+  "bookpages/book_absurdist.jpg": {
+   "w": 1440,
+   "h": 869,
+   "bytes": 81705
+  },
+  "bookpages/book_applications.jpg": {
+   "w": 1440,
+   "h": 4351,
+   "bytes": 621485
+  },
+  "bookpages/book_attention.jpg": {
+   "w": 1440,
+   "h": 851,
+   "bytes": 109277
+  },
+  "bookpages/book_color.jpg": {
+   "w": 1440,
+   "h": 1654,
+   "bytes": 180003
+  },
+  "bookpages/book_cover.jpg": {
+   "w": 1440,
+   "h": 1526,
+   "bytes": 172537
+  },
+  "bookpages/book_faces.jpg": {
+   "w": 1440,
+   "h": 828,
+   "bytes": 109477
+  },
+  "bookpages/book_hermetic.jpg": {
+   "w": 1440,
+   "h": 869,
+   "bytes": 83478
+  },
+  "bookpages/book_idea.jpg": {
+   "w": 1440,
+   "h": 880,
+   "bytes": 104727
+  },
+  "bookpages/book_light.jpg": {
+   "w": 1440,
+   "h": 1604,
+   "bytes": 193028
+  },
+  "bookpages/book_lockup.jpg": {
+   "w": 1440,
+   "h": 1398,
+   "bytes": 144175
+  },
+  "bookpages/book_motion.jpg": {
+   "w": 1440,
+   "h": 1932,
+   "bytes": 212036
+  },
+  "bookpages/book_nihilist.jpg": {
+   "w": 1440,
+   "h": 869,
+   "bytes": 76624
+  },
+  "bookpages/book_stoic.jpg": {
+   "w": 1440,
+   "h": 869,
+   "bytes": 72172
+  },
+  "bookpages/book_type.jpg": {
+   "w": 1440,
+   "h": 1626,
+   "bytes": 159515
+  },
+  "bookpages/book_voice.jpg": {
+   "w": 1440,
+   "h": 1026,
+   "bytes": 136700
+  },
+  "bookpages/book_wrap.jpg": {
+   "w": 1440,
+   "h": 1335,
+   "bytes": 164285
+  },
+  "sketch_clean_1.jpg": {
+   "w": 1400,
+   "h": 1400,
+   "bytes": 79388
+  },
+  "sketch_clean_2.jpg": {
+   "w": 1400,
+   "h": 1400,
+   "bytes": 70400
+  },
+  "sketch_clean_3.jpg": {
+   "w": 1400,
+   "h": 1400,
+   "bytes": 82754
+  },
+  "sketch_clean_4.jpg": {
+   "w": 1400,
+   "h": 1400,
+   "bytes": 106038
+  },
+  "sketch_clean_5.jpg": {
+   "w": 1400,
+   "h": 1400,
+   "bytes": 156814
   }
  }
 }

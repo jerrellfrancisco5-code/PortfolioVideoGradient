@@ -1,0 +1,605 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Philosophy Cans Brand Book</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+/* v13 brand book, 31 October 2026. The dark studio is the primary, so the book is dark first: charcoal pages like
+   the sweep, interrupted by the four full-bleed can colours carrying white and black marks exactly as the cans do. */
+@font-face { font-family: 'Degular'; font-weight: 900; src: url('fonts/Degular-Black.otf') format('opentype'); font-display: swap; }
+@font-face { font-family: 'Degular'; font-weight: 700; src: url('fonts/Degular-Bold.otf') format('opentype'); font-display: swap; }
+@font-face { font-family: 'Degular'; font-weight: 600; src: url('fonts/Degular-Semibold.otf') format('opentype'); font-display: swap; }
+:root {
+  --bg: #101114;          /* the studio charcoal */
+  --surface: #17191D;
+  --fg: #ECEEF1;
+  --muted: #9AA1AA;
+  --line: #2B2F36;
+  --ink: #0E0E0E;         /* label ink, black on the colour bands */
+  --paper: #FFFFFF;       /* the roundel */
+  --alu: #C9CED4;         /* bare aluminium */
+  --herm: #FFBD0B; --abs: #FB5607; --sto: #3475D6; --nih: #FF006E;
+  --herm-acc: #0E7C5A; --abs-acc: #8FD3FF; --sto-acc: #B07A3B; --nih-acc: #8338EC;
+  --logo-filter: invert(1);
+  --f-display: 'Degular', 'Arial Black', 'Helvetica Neue', Arial, sans-serif;
+  --f-body: 'Degular', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --f-mono: 'IBM Plex Mono', ui-monospace, 'Cascadia Mono', Consolas, monospace;
+  --gut: max(16px, env(safe-area-inset-left, 0px));
+  --gutr: max(16px, env(safe-area-inset-right, 0px));
+  color-scheme: dark;
+}
+@media (prefers-color-scheme: light) { :root:not([data-theme="dark"]) {
+  --bg: #EDEFF2; --surface: #F7F8FA; --fg: #0E0E0E; --muted: #555B63; --line: #CDD1D7; --logo-filter: none; color-scheme: light; } }
+:root[data-theme="light"] { --bg: #EDEFF2; --surface: #F7F8FA; --fg: #0E0E0E; --muted: #555B63; --line: #CDD1D7; --logo-filter: none; color-scheme: light; }
+
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body { background: var(--bg); color: var(--fg); font-family: var(--f-body); font-weight: 600; font-size: 18px; line-height: 1.5; }
+img, video { display: block; max-width: 100%; height: auto; }
+.wrap { max-width: 1240px; margin: 0 auto; padding-left: var(--gut); padding-right: var(--gutr); }
+section { padding-block: clamp(56px, 9vw, 120px); }
+h1, h2, h3 { font-family: var(--f-display); font-weight: 900; line-height: 0.88; letter-spacing: -0.015em; text-transform: uppercase; text-wrap: balance; margin: 0; }
+h2 { font-size: clamp(44px, 7.5vw, 104px); }
+h3 { font-size: clamp(26px, 3.2vw, 40px); }
+p { margin: 0; max-width: 64ch; }
+.eyebrow { font-family: var(--f-mono); font-size: 13px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); }
+.band .eyebrow, .band .muted { color: rgba(14,14,14,0.72); }
+.mono { font-family: var(--f-mono); font-size: 14px; letter-spacing: 0.02em; font-weight: 400; }
+.muted { color: var(--muted); }
+.lead { font-size: clamp(19px, 2vw, 24px); line-height: 1.4; }
+.stack { display: flex; flex-direction: column; gap: 20px; }
+.row { display: flex; gap: 24px; flex-wrap: wrap; align-items: baseline; justify-content: space-between; }
+hr { border: 0; border-top: 1px solid var(--line); margin: 0; }
+.logo { filter: var(--logo-filter); }
+.band { color: var(--ink); }
+.band .logo { filter: none; }
+
+/* ---------- cover */
+.cover { padding-block: clamp(28px, 5vw, 56px) 0; }
+.cover-top { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
+.cover-top img { width: min(260px, 52vw); }
+.cover h1 { font-size: clamp(64px, 15.5vw, 228px); margin-top: clamp(28px, 5vw, 64px); }
+.cover h1 span { display: block; }
+.cover .tag { display: flex; justify-content: space-between; align-items: end; flex-wrap: wrap; gap: 20px; margin-top: 28px; }
+.hero-img { margin-top: clamp(28px, 5vw, 56px); width: 100%; aspect-ratio: 16 / 9; object-fit: cover; }
+.pill { display: inline-block; border: 2px solid currentColor; border-radius: 999px; padding: 7px 18px 5px; font-family: var(--f-display); font-weight: 900; letter-spacing: 0.32em; font-size: 13px; text-transform: uppercase; }
+
+/* ---------- idea */
+.idea-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: clamp(28px, 5vw, 72px); align-items: start; margin-top: 40px; }
+.mood { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 2px solid var(--fg); }
+.mood > div { padding: 18px 14px 18px 0; border-right: 1px solid var(--line); min-width: 0; }
+.mood > div:last-child { border-right: 0; }
+.mood b { display: block; font-family: var(--f-display); font-size: 26px; font-weight: 900; line-height: 1; text-transform: uppercase; margin-bottom: 6px; }
+.dot { display: inline-block; width: 12px; height: 12px; border-radius: 50%; margin-right: 8px; vertical-align: middle; }
+
+/* ---------- SKU bands */
+.band { padding-block: clamp(48px, 7vw, 96px); }
+.band .inner { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr); gap: clamp(28px, 5vw, 64px); align-items: center; }
+.band .name img { width: min(520px, 100%); }
+.band .facts { display: grid; grid-template-columns: auto 1fr; gap: 6px 22px; font-family: var(--f-mono); font-size: 14px; margin: 26px 0 0; font-weight: 400; }
+.band .facts dt { text-transform: uppercase; letter-spacing: 0.1em; opacity: 0.7; }
+.band .facts dd { margin: 0; }
+.band .aff { font-family: var(--f-display); font-weight: 900; font-size: clamp(34px, 4.6vw, 62px); line-height: 0.9; text-transform: uppercase; margin-top: 26px; }
+.band .render { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; background: #0E0E0E; }
+.b-herm { background: var(--herm); } .b-abs { background: var(--abs); } .b-sto { background: var(--sto); } .b-nih { background: var(--nih); }
+.faces { display: flex; gap: 10px; margin-top: 22px; }
+.faces div { width: 84px; height: 84px; border-radius: 50%; background: var(--paper); display: grid; place-items: center; }
+.faces img { width: 86%; height: 86%; object-fit: contain; }
+
+/* ---------- colour */
+.swatches { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; margin-top: 40px; }
+.sw { display: flex; flex-direction: column; min-width: 0; }
+.sw .chip { aspect-ratio: 3 / 4; padding: 14px; display: flex; flex-direction: column; justify-content: space-between; color: var(--ink); }
+.sw .chip b { font-family: var(--f-display); font-weight: 900; font-size: 28px; line-height: 0.95; text-transform: uppercase; }
+.sw .sub { display: grid; grid-template-columns: 1fr 1fr; }
+.sw .sub div { height: 64px; padding: 8px; font-family: var(--f-mono); font-size: 11px; }
+.sw dl { display: grid; grid-template-columns: auto 1fr; gap: 2px 12px; font-family: var(--f-mono); font-size: 12.5px; margin: 12px 0 0; font-weight: 400; }
+.sw dt { color: var(--muted); } .sw dd { margin: 0; font-variant-numeric: tabular-nums; }
+.neutrals { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; margin-top: 14px; }
+.neutrals div { height: 96px; padding: 12px; font-family: var(--f-mono); font-size: 12px; display: flex; flex-direction: column; justify-content: flex-end; border: 1px solid var(--line); }
+.melt { display: grid; grid-template-columns: 140px minmax(0, 1fr); gap: 28px; align-items: center; margin-top: 40px; }
+.melt .can { height: 300px; border-radius: 22px 22px 14px 14px; border: 1px solid var(--line);
+  background: linear-gradient(180deg, color-mix(in srgb, var(--sto) 90%, var(--alu)) 0%, color-mix(in srgb, var(--sto) 85%, var(--alu)) 8%, color-mix(in srgb, var(--sto) 82%, var(--alu)) 17%, color-mix(in srgb, var(--sto) 81%, var(--alu)) 25%, color-mix(in srgb, var(--sto) 80%, var(--alu)) 33%, color-mix(in srgb, var(--sto) 78%, var(--alu)) 42%, color-mix(in srgb, var(--sto) 71%, var(--alu)) 50%, color-mix(in srgb, var(--sto) 65%, var(--alu)) 58%, color-mix(in srgb, var(--sto) 62%, var(--alu)) 67%, color-mix(in srgb, var(--sto) 49%, var(--alu)) 75%, color-mix(in srgb, var(--sto) 23%, var(--alu)) 83%, color-mix(in srgb, var(--sto) 5%, var(--alu)) 92%, var(--alu) 100%); }
+
+/* ---------- type */
+.spec { display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 20px 40px; margin-top: 44px; align-items: center; }
+.spec > div:nth-child(odd) { font-family: var(--f-mono); font-size: 13px; color: var(--muted); font-weight: 400; }
+.spec .s-display { font-family: var(--f-display); font-weight: 900; font-size: clamp(54px, 8vw, 112px); line-height: 0.86; text-transform: uppercase; letter-spacing: -0.015em; }
+.spec .s-head { font-family: var(--f-display); font-weight: 700; font-size: clamp(26px, 3vw, 36px); text-transform: uppercase; line-height: 1; letter-spacing: 0.06em; }
+.spec .s-body { font-family: var(--f-mono); font-size: 15px; text-transform: uppercase; max-width: 52ch; font-weight: 400; }
+.spec img { max-width: min(560px, 100%); }
+.names { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px 40px; margin-top: 40px; align-items: center; }
+.names img { width: 100%; }
+
+/* ---------- lockup */
+.lockup { display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr); gap: clamp(28px, 5vw, 64px); align-items: center; margin-top: 40px; }
+.lockup figure { margin: 0; position: relative; }
+.lockup figure img { width: 100%; }
+.lockup .fix { position: absolute; }
+.rules { counter-reset: r; display: grid; gap: 16px; padding: 0; margin: 0; }
+.rules li { list-style: none; display: grid; grid-template-columns: 40px 1fr; gap: 10px; }
+.rules li::before { counter-increment: r; content: counter(r, decimal-leading-zero); font-family: var(--f-mono); color: var(--muted); padding-top: 2px; }
+.fix { width: 30px; height: 30px; border-radius: 50%; background: var(--paper); color: var(--ink); font: 600 13px/30px var(--f-mono); text-align: center; transform: translate(-50%, -50%); box-shadow: 0 0 0 3px var(--ink); }
+
+/* ---------- wrap */
+.wrapfig { position: relative; margin-top: 36px; }
+.zones { display: grid; grid-template-columns: 24fr 28fr 28fr 20fr; margin-top: 10px; font-family: var(--f-mono); font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 400; }
+.zones div { border-top: 2px solid var(--fg); padding-top: 8px; padding-right: 8px; min-width: 0; }
+.bandrow { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; margin-top: 28px; }
+.bandrow img { width: 100%; }
+
+/* ---------- motion */
+.curves { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; margin-top: 40px; }
+.curve { background: var(--surface); border: 1px solid var(--line); padding: 16px; display: flex; flex-direction: column; gap: 12px; min-width: 0; }
+.curve svg { width: 100%; height: auto; overflow: visible; }
+.curve .g { stroke: var(--line); }
+.curve .h { stroke: var(--muted); stroke-dasharray: 3 3; }
+.curve .c { fill: none; stroke-width: 3; }
+.curve h3 { font-size: 28px; }
+.track { position: relative; height: 34px; border-bottom: 1px solid var(--line); }
+.track i { position: absolute; left: 0; bottom: 0; width: 18px; height: 30px; border-radius: 4px 4px 2px 2px; }
+@media (prefers-reduced-motion: no-preference) { .play .track i { animation: travel 2.4s infinite alternate; } }
+@keyframes travel { from { left: 0; } to { left: calc(100% - 18px); } }
+.replay { font: 500 13px var(--f-mono); letter-spacing: 0.1em; text-transform: uppercase; background: var(--fg); color: var(--bg); border: 0; padding: 10px 16px; cursor: pointer; }
+.replay:focus-visible { outline: 3px solid var(--sto); outline-offset: 3px; }
+.loops { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; margin-top: 40px; }
+.loops video { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; background: #000; }
+.loops .wide { grid-column: span 2; }
+.loops .wide video { aspect-ratio: 2 / 1; }
+.loops figure { margin: 0; min-width: 0; }
+.loops figcaption { font-family: var(--f-mono); font-size: 12px; color: var(--muted); margin-top: 8px; letter-spacing: 0.06em; text-transform: uppercase; font-weight: 400; }
+
+/* ---------- attention */
+.att { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0; margin-top: 40px; border-top: 2px solid var(--fg); }
+.att > div { padding: 22px 22px 22px 0; border-bottom: 1px solid var(--line); min-width: 0; }
+.att b { font-family: var(--f-display); font-weight: 900; font-size: 26px; text-transform: uppercase; display: block; line-height: 1; margin-bottom: 8px; }
+
+/* ---------- light */
+.lightgrid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(24px, 4vw, 56px); align-items: center; margin-top: 40px; }
+.rig { width: 100%; height: auto; background: var(--surface); border: 1px solid var(--line); }
+.rig text { font-family: var(--f-mono); font-size: 11px; fill: var(--fg); }
+.rig .lbl2 { fill: var(--muted); }
+.rig .lamp { fill: var(--fg); }
+.rig .soft { fill: var(--muted); opacity: 0.55; }
+.gallery { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; margin-top: 40px; }
+.gallery img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; background: #0E0E0E; }
+.envs { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; margin-top: 28px; }
+.envs div { padding: 16px; border: 1px solid var(--line); background: var(--surface); min-width: 0; }
+.envs b { font-family: var(--f-display); font-weight: 900; font-size: 22px; text-transform: uppercase; display: block; line-height: 1; margin-bottom: 8px; }
+
+/* ---------- faces */
+.medals { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; margin-top: 40px; }
+.medals img { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; }
+
+/* ---------- voice */
+.voice { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin-top: 40px; }
+.voice blockquote { margin: 0; padding: 22px; background: var(--surface); border: 1px solid var(--line); font-family: var(--f-display); font-weight: 900; font-size: clamp(24px, 2.6vw, 34px); line-height: 0.95; text-transform: uppercase; }
+.voice blockquote small { display: block; margin-top: 12px; font: 500 12px var(--f-mono); letter-spacing: 0.1em; color: var(--muted); }
+.dodont { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 14px; }
+.dodont div { padding: 18px; border: 1px solid var(--line); }
+.dodont h3 { font-size: 22px; margin-bottom: 10px; }
+.dodont ul { margin: 0; padding-left: 18px; display: grid; gap: 6px; }
+
+/* ---------- applications */
+.stills { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin-top: 36px; }
+.stills img { width: 100%; background: #0E0E0E; }
+.apps { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; margin-top: 14px; align-items: start; }
+.apps img { width: 100%; height: auto; background: var(--surface); }
+.ooh { display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); gap: 14px; margin-top: 14px; align-items: start; }
+.ooh img { width: 100%; background: var(--surface); }
+footer { padding-block: 56px 72px; border-top: 1px solid var(--line); }
+
+@media (max-width: 860px) {
+  .idea-grid, .band .inner, .lockup, .lightgrid, .names, .ooh, .melt { grid-template-columns: 1fr; }
+  .swatches, .curves, .gallery, .medals, .loops { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .neutrals, .apps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .att, .envs, .stills { grid-template-columns: 1fr; }
+  .voice, .dodont { grid-template-columns: 1fr; }
+  .spec { grid-template-columns: 1fr; gap: 8px; }
+  .spec > div:nth-child(odd) { margin-top: 18px; }
+  .mood { grid-template-columns: repeat(2, 1fr); }
+  .mood > div:nth-child(2) { border-right: 0; }
+  .melt .can { height: 200px; }
+}
+@media (max-width: 460px) { .zones { font-size: 9px; letter-spacing: 0; } }
+</style>
+</head>
+<body>
+
+<header class="cover">
+  <div class="wrap">
+    <div class="cover-top">
+      <img class="logo" src="img/studio_francisco.png" alt="Studio Francisco wordmark">
+      <span class="eyebrow">Brand Book &middot; v13 &middot; 31 October 2026</span>
+    </div>
+    <h1><span>Philosophy</span><span>Cans</span></h1>
+    <div class="tag">
+      <p class="lead">Four sparkling worldviews for people who are, frankly, too smart for regular soda. Packaging, characters, motion and campaign system by Studio Francisco.</p>
+      <span class="pill">Crack open a worldview</span>
+    </div>
+  </div>
+  <img class="hero-img" src="img/lineup.jpg" alt="The four Philosophy Cans lined up on the charcoal studio sweep: Hermetic in gold, Absurdist in orange, Stoic in blue and Nihilist in pink, colour at the top melting into bare aluminium at the base.">
+</header>
+
+<main>
+<section id="idea">
+  <div class="wrap">
+    <span class="eyebrow">The idea</span>
+    <div class="idea-grid">
+      <h2>Drink water. And whatever is in this.</h2>
+      <div class="stack">
+        <p class="lead">Every can is a school of thought you can hold in one hand. Each one adjusts your mood in a specific, extremely unscientific direction, and each one flatters the person holding it.</p>
+        <p>The joke works because the craft is serious. The faces, the symbols and the wordmarks are Jerrell's own ink, vectorised from his files and never redrawn. The cans are lit like a premium beverage launch, in one dark studio, and every move each character makes follows one curve. The copy treats the reader as the smartest person in the room and saves its mockery for the universe.</p>
+      </div>
+    </div>
+    <div class="mood" style="margin-top:56px">
+      <div><span class="eyebrow"><span class="dot" style="background:var(--herm)"></span>Hermetic</span><b>Bliss</b><span class="muted">Smug cosmic bliss. Everything is connected, especially you.</span></div>
+      <div><span class="eyebrow"><span class="dot" style="background:var(--abs)"></span>Absurdist</span><b>Absurd joy</b><span class="muted">Unhinged joy. Nothing makes sense, so laugh and keep pushing.</span></div>
+      <div><span class="eyebrow"><span class="dot" style="background:var(--sto)"></span>Stoic</span><b>Reserve</b><span class="muted">Calm, unbothered. Control the sip, accept the rest.</span></div>
+      <div><span class="eyebrow"><span class="dot" style="background:var(--nih)"></span>Nihilist</span><b>Void</b><span class="muted">Deadpan relief. Nothing matters, so nothing is your fault.</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="band b-herm" id="hermetic">
+  <div class="wrap inner">
+    <div>
+      <span class="eyebrow">01 of 4 &middot; Herm, the Enlightened One</span>
+      <div class="name" style="margin-top:18px"><img class="logo" src="img/name_hermetic.png" alt="HERMETIC, his wordmark, waving"></div>
+      <div class="aff">You are the universe, but hydrated.</div>
+      <dl class="facts"><dt>Mood</dt><dd>Bliss</dd><dt>Flavor</dt><dd>Sparkling mango yuzu</dd><dt>Band</dt><dd>ZERO DOUBT, between two eyes of Ra</dd><dt>Accent</dt><dd>Emerald Tablet #0E7C5A</dd><dt>Motion</dt><dd>Levitate, sine in-out</dd><dt>Signed</dt><dd>Hermes Trismegistus. Thrice-Great. Once-Hydrated.</dd></dl>
+      <div class="faces"><div><img src="img/face_hermetic_1.png" alt=""></div><div><img src="img/face_hermetic_2.png" alt=""></div><div><img src="img/face_hermetic_3.png" alt=""></div></div>
+    </div>
+    <img class="render" src="img/hero_hermetic.jpg" alt="The Hermetic can on the charcoal sweep: gold at the top, bare aluminium at the base, the white roundel with Herm's face.">
+  </div>
+</section>
+
+<section class="band b-abs" id="absurdist">
+  <div class="wrap inner">
+    <div>
+      <span class="eyebrow">02 of 4 &middot; Albert, the Happy Sisyphus</span>
+      <div class="name" style="margin-top:18px"><img class="logo" src="img/name_absurdist.png" alt="ABSURDIST, his wordmark, jagged, with the A upside down"></div>
+      <div class="aff">One must imagine you thirsty.</div>
+      <dl class="facts"><dt>Mood</dt><dd>Absurd joy</dd><dt>Flavor</dt><dd>Sparkling blood orange chili</dd><dt>Band</dt><dd>ZERO MEANING, between two spirals</dd><dt>Accent</dt><dd>Hilltop Sky #8FD3FF</dd><dt>Motion</dt><dd>Boing, back-out overshoot</dd><dt>Signed</dt><dd>Sisyphus. Still pushing.</dd></dl>
+      <div class="faces"><div><img src="img/face_absurdist_1.png" alt=""></div><div><img src="img/face_absurdist_2.png" alt=""></div><div><img src="img/face_absurdist_3.png" alt=""></div></div>
+    </div>
+    <img class="render" src="img/hero_absurdist.jpg" alt="The Absurdist can on the charcoal sweep, orange melting into aluminium.">
+  </div>
+</section>
+
+<section class="band b-sto" id="stoic">
+  <div class="wrap inner">
+    <div>
+      <span class="eyebrow">03 of 4 &middot; Marcus, the Unbothered</span>
+      <div class="name" style="margin-top:18px"><img class="logo" src="img/name_stoic.png" alt="STOIC, his wordmark, plain"></div>
+      <div class="aff">You're already enough.</div>
+      <dl class="facts"><dt>Mood</dt><dd>Reserve</dd><dt>Flavor</dt><dd>Sparkling blueberry cold mint</dd><dt>Band</dt><dd>ZERO COMPLAINTS, between two suns</dd><dt>Accent</dt><dd>Bronze Age #B07A3B</dd><dt>Motion</dt><dd>Settle, expo-out</dd><dt>Signed</dt><dd>Marcus Aurelius. Emperor. Journaler.</dd></dl>
+      <div class="faces"><div><img src="img/face_stoic_1.png" alt=""></div><div><img src="img/face_stoic_2.png" alt=""></div><div><img src="img/face_stoic_3.png" alt=""></div></div>
+    </div>
+    <img class="render" src="img/hero_stoic.jpg" alt="The Stoic can on the charcoal sweep, blue melting into aluminium.">
+  </div>
+</section>
+
+<section class="band b-nih" id="nihilist">
+  <div class="wrap inner">
+    <div>
+      <span class="eyebrow">04 of 4 &middot; Fred, the Void Gazer</span>
+      <div class="name" style="margin-top:18px"><img class="logo" src="img/name_nihilist.png" alt="NIHILIST, his wordmark, drooping"></div>
+      <div class="aff">Nothing matters. You still look great.</div>
+      <dl class="facts"><dt>Mood</dt><dd>Void</dd><dt>Flavor</dt><dd>Sparkling dragonfruit (flavor irrelevant)</dd><dt>Band</dt><dd>ZERO POINT, between two skulls</dd><dt>Accent</dt><dd>Ultraviolet Abyss #8338EC</dd><dt>Motion</dt><dd>Slump, heavy ease-in</dd><dt>Signed</dt><dd>F. Nietzsche. Didn't ask to be here.</dd></dl>
+      <div class="faces"><div><img src="img/face_nihilist_1.png" alt=""></div><div><img src="img/face_nihilist_2.png" alt=""></div><div><img src="img/face_nihilist_3.png" alt=""></div></div>
+    </div>
+    <img class="render" src="img/hero_nihilist.jpg" alt="The Nihilist can on the charcoal sweep, pink melting into aluminium.">
+  </div>
+</section>
+
+<section id="color">
+  <div class="wrap">
+    <span class="eyebrow">Colour</span>
+    <div class="row" style="margin-top:12px"><h2>One worldview, one colour. Then the metal.</h2></div>
+    <p class="lead" style="margin-top:22px">Each philosophy owns a saturated primary, a deep tone for shadows and type on photography, and an accent pulled from its own mythology. On the can the primary sits at the top and melts down the body into bare aluminium, so every can ends in the same silver.</p>
+    <div class="swatches">
+      <div class="sw"><div class="chip" style="background:var(--herm)"><span class="mono">Primary</span><b>Alchemy<br>Gold</b></div><div class="sub"><div style="background:#5A3A00;color:#fff">Deep<br>#5A3A00</div><div style="background:#0E7C5A;color:#fff">Emerald<br>#0E7C5A</div></div>
+        <dl><dt>HEX</dt><dd>#FFBD0B</dd><dt>RGB</dt><dd>255 189 11</dd><dt>CMYK</dt><dd>0 26 96 0</dd><dt>Ink</dt><dd>12.3 : 1 black</dd></dl></div>
+      <div class="sw"><div class="chip" style="background:var(--abs)"><span class="mono">Primary</span><b>Boulder<br>Orange</b></div><div class="sub"><div style="background:#5C1A00;color:#fff">Deep<br>#5C1A00</div><div style="background:#8FD3FF">Sky<br>#8FD3FF</div></div>
+        <dl><dt>HEX</dt><dd>#FB5607</dd><dt>RGB</dt><dd>251 86 7</dd><dt>CMYK</dt><dd>0 66 97 2</dd><dt>Ink</dt><dd>6.6 : 1 black</dd></dl></div>
+      <div class="sw"><div class="chip" style="background:var(--sto)"><span class="mono">Primary</span><b>Marble<br>Blue</b></div><div class="sub"><div style="background:#0B2A5B;color:#fff">Deep<br>#0B2A5B</div><div style="background:#B07A3B;color:#fff">Bronze<br>#B07A3B</div></div>
+        <dl><dt>HEX</dt><dd>#3475D6</dd><dt>RGB</dt><dd>52 117 214</dd><dt>CMYK</dt><dd>76 45 0 16</dd><dt>Ink</dt><dd>4.8 : 1 black</dd></dl></div>
+      <div class="sw"><div class="chip" style="background:var(--nih)"><span class="mono">Primary</span><b>Void<br>Pink</b></div><div class="sub"><div style="background:#14060D;color:#fff">Deep<br>#14060D</div><div style="background:#8338EC;color:#fff">Ultraviolet<br>#8338EC</div></div>
+        <dl><dt>HEX</dt><dd>#FF006E</dd><dt>RGB</dt><dd>255 0 110</dd><dt>CMYK</dt><dd>0 100 57 0</dd><dt>Ink</dt><dd>5.6 : 1 black</dd></dl></div>
+    </div>
+    <div class="neutrals">
+      <div style="background:#0E0E0E;color:#fff">Label Ink<br>#0E0E0E</div>
+      <div style="background:#C9CED4;color:#0E0E0E">Bare Aluminium<br>#C9CED4</div>
+      <div style="background:#202022;color:#fff">Studio Charcoal<br>#202022</div>
+      <div style="background:#FFFFFF;color:#0E0E0E">Roundel White<br>#FFFFFF</div>
+    </div>
+    <div class="melt">
+      <div class="can" role="img" aria-label="A can-shaped strip: Marble Blue at the top, holding most of the way down, then falling to bare aluminium at the base."></div>
+      <div class="stack">
+        <h3>Colour on top, metal at the base.</h3>
+        <p>Jerrell's curve, measured on the Stoic metal plate: 10 % metal at the shoulder, about 20 % through the roundel, 35 to 40 % under the wordmark so the white type sits on a hint of silver, then a soft fall to 100 % bare aluminium one millimetre above the bottom print edge. The same curve runs on all four cans.</p>
+        <p class="mono muted">White marks (band, wordmark, roundel) print on top of the melt. Black ink prints only inside the roundel and in the mood facts. Accents never touch the can body; they live in campaign graphics, props and set design.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr>
+
+<section id="type">
+  <div class="wrap">
+    <span class="eyebrow">Typography</span>
+    <h2 style="margin-top:12px">His hand first. Then two voices.</h2>
+    <div class="spec">
+      <div>Studio wordmark<br>Jerrell's lettering<br>Studio Francisco only</div>
+      <div><img class="logo" src="img/studio_francisco.png" alt="STUDIO FRANCISCO, the studio wordmark"></div>
+      <div>Logotypes<br>His own, lifted as vectors<br>from Philosophy_Cans.ai</div>
+      <div><img class="logo" src="img/name_absurdist.png" alt="ABSURDIST logotype with its upside-down A"></div>
+      <div>Display<br>Degular Black<br>caps, tight</div>
+      <div class="s-display">Nothing here is random.</div>
+      <div>Headline<br>Degular Bold<br>caps, tracked</div>
+      <div class="s-head">What happens is not up to you.</div>
+      <div>Body &amp; legal<br>IBM Plex Mono<br>Regular / Medium, caps</div>
+      <div class="s-body">Brewed for things within your control. This can cannot be rushed, offended, or talked out of its opinion.</div>
+    </div>
+    <div class="names">
+      <img class="logo" src="img/name_hermetic.png" alt="HERMETIC, waving">
+      <img class="logo" src="img/name_absurdist.png" alt="ABSURDIST, jagged, the A flipped">
+      <img class="logo" src="img/name_stoic.png" alt="STOIC, plain">
+      <img class="logo" src="img/name_nihilist.png" alt="NIHILIST, drooping">
+    </div>
+    <p class="muted" style="margin-top:36px">The four logotypes keep the baselines he drew: Hermetic waves, Absurdist is jagged with its A flipped, Stoic stands straight, Nihilist droops. They are set at one size on all four cans, white, with the mood pill tracked out beneath. Degular is the face he set them in, so it carries the campaign display type too.</p>
+  </div>
+</section>
+
+<hr>
+
+<section id="lockup">
+  <div class="wrap">
+    <span class="eyebrow">The front panel</span>
+    <h2 style="margin-top:12px">Five layers, read in order.</h2>
+    <div class="lockup">
+      <figure>
+        <img src="img/front_stoic.jpg" alt="The front of the Stoic label, flat: ZERO COMPLAINTS between two suns under the shoulder, the white roundel with Marcus's face, STOIC with RESERVE beneath, his symbol lattice over blue melting into aluminium.">
+        <span class="fix" style="left:50%;top:46%">1</span>
+        <span class="fix" style="left:50%;top:72%">2</span>
+        <span class="fix" style="left:50%;top:9%">3</span>
+        <span class="fix" style="left:16%;top:30%">4</span>
+        <span class="fix" style="left:84%;top:92%">5</span>
+      </figure>
+      <ol class="rules">
+        <li><div><b>The roundel.</b> A solid white disc carrying the character's face in black ink, his still from the expression videos. It is the brightest thing on the can, so it wins the first glance.</div></li>
+        <li><div><b>Logotype and pill.</b> His wordmark in white at one size on all four cans, the mood tracked out beneath it in Degular Black. It sits where the colour starts to thin into metal.</div></li>
+        <li><div><b>The band.</b> A product claim in the house voice, one per philosophy, under the shoulder at the height where TAURINE sits on an energy can. Its symbol is repeated either side, the right one mirrored so the pair faces each other.</div></li>
+        <li><div><b>The lattice.</b> His pattern symbols, tinted into the primary, running over the whole print area behind everything else.</div></li>
+        <li><div><b>The melt.</b> The print runs from 7.6 mm above the chime to the neck dip at 150.8 mm. Colour at the top, bare aluminium at the base; the flavour and volume lines sit on the metal.</div></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section id="wrap" style="padding-top:0">
+  <div class="wrap">
+    <span class="eyebrow">360&deg; wrap &middot; 16 fl oz (473 mL) &middot; artwork 207.3 &times; 150.62 mm</span>
+    <h3 style="margin-top:12px">The can is read by turning it.</h3>
+    <div class="wrapfig">
+      <img src="img/wrap_stoic.jpg" alt="The full Stoic label laid flat with the v10t finish: the mood facts and legal copy on the left, the band, roundel and logotype in the centre, the small lockup, story and ego line on the right, the barcode and flavour line along the metal at the base.">
+    </div>
+    <div class="zones"><div>Back-left &middot; mood facts, ingredients, legal</div><div>Front &middot; band, roundel, logotype</div><div>Right &middot; lockup, story, ego line</div><div>Base &middot; barcode, flavour, volume</div></div>
+    <p class="muted" style="margin-top:18px">Intended fixation order: face, logotype, band, then the story as the can turns. Design intent, not a measured eye-tracking study.</p>
+    <div class="bandrow">
+      <img src="img/band_hermetic.jpg" alt="ZERO DOUBT between two eyes of Ra on gold">
+      <img src="img/band_absurdist.jpg" alt="ZERO MEANING between two spirals on orange">
+      <img src="img/band_stoic.jpg" alt="ZERO COMPLAINTS between two suns on blue">
+      <img src="img/band_nihilist.jpg" alt="ZERO POINT between two skulls on pink">
+    </div>
+  </div>
+</section>
+
+<hr>
+
+<section id="faces">
+  <div class="wrap">
+    <span class="eyebrow">Faces</span>
+    <h2 style="margin-top:12px">His ink. Never redrawn.</h2>
+    <p class="lead" style="margin-top:22px">Each face is the still Jerrell chose from his own expression videos, vectorised and placed in the roundel. In motion the faces are alive everywhere: a 248-frame squint-and-blink cycle, cleaned from the same videos, runs on every can in every shot.</p>
+    <div class="medals">
+      <img src="img/medallion_hermetic.jpg" alt="Herm's face in the white roundel on gold">
+      <img src="img/medallion_absurdist.jpg" alt="Albert's face in the white roundel on orange">
+      <img src="img/medallion_stoic.jpg" alt="Marcus's face in the white roundel on blue">
+      <img src="img/medallion_nihilist.jpg" alt="Fred's face in the white roundel on pink">
+    </div>
+  </div>
+</section>
+
+<hr>
+
+<section id="motion">
+  <div class="wrap">
+    <div class="row"><div><span class="eyebrow">Motion</span><h2 style="margin-top:12px">Every philosophy moves differently.</h2></div>
+    <button class="replay" id="playbtn" type="button" aria-pressed="false">Play curves</button></div>
+    <p class="lead" style="margin-top:22px">The graph editor is part of the brand. Each SKU has one signature easing curve, used for every move that character makes. Values are CSS cubic-bezier and map one-to-one onto Blender and After Effects handles. Everything renders at 24 fps on the dark sweep, with the faces animated.</p>
+    <div class="curves" id="curves"></div>
+    <div class="loops">
+      <figure><video autoplay muted loop playsinline src="vid/Hermetic_Turntable.mp4"></video><figcaption>Hermetic turntable</figcaption></figure>
+      <figure><video autoplay muted loop playsinline src="vid/Absurdist_Turntable.mp4"></video><figcaption>Absurdist turntable</figcaption></figure>
+      <figure><video autoplay muted loop playsinline src="vid/Stoic_Turntable.mp4"></video><figcaption>Stoic turntable</figcaption></figure>
+      <figure><video autoplay muted loop playsinline src="vid/Nihilist_Turntable.mp4"></video><figcaption>Nihilist turntable</figcaption></figure>
+      <figure class="wide"><video autoplay muted loop playsinline src="vid/LightSweep.mp4"></video><figcaption>Light sweep &middot; a hard strip swings round the can</figcaption></figure>
+      <figure class="wide"><video autoplay muted loop playsinline src="vid/Domino.mp4"></video><figcaption>Domino &middot; four cans, four landings, four curves</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<hr>
+
+<section id="attention">
+  <div class="wrap">
+    <span class="eyebrow">Attention architecture</span>
+    <h2 style="margin-top:12px">Designed for the first 300 milliseconds.</h2>
+    <div class="att">
+      <div><b>Faces first</b>People find faces, even cartoon ones, before anything else in a frame. The roundel sits at the optical centre of every layout so the first fixation lands on the character.</div>
+      <div><b>Gaze cueing</b>Viewers follow where a character looks. In ads, the face looks toward the line we need read next, usually the logotype or the call to action.</div>
+      <div><b>One odd can</b>In any lineup, one can breaks the pattern: tilted, lifted or turned. The isolation effect makes it the memory anchor of the frame.</div>
+      <div><b>Contrast ladder</b>White roundel on saturated colour, then white logotype, then bare metal, then the charcoal. Clear luminance steps, so the eye never has to choose.</div>
+      <div><b>Thumb-stop</b>Motion starts inside the first half second, and the first frame already reads as a finished poster. Loops are seamless so the replay feels intentional.</div>
+      <div><b>Safe zones</b>Vertical video keeps type out of the top 14 % and bottom 20 %, where platform UI sits. Every key line also fits the centre 4:5 crop.</div>
+    </div>
+  </div>
+</section>
+
+<hr>
+
+<section id="light">
+  <div class="wrap">
+    <span class="eyebrow">Lighting</span>
+    <h2 style="margin-top:12px">One dark studio. The stripe is the signature.</h2>
+    <div class="lightgrid">
+      <svg class="rig" viewBox="0 0 520 470" role="img" aria-label="Top-down diagram of the dark studio. The can is in the centre and the camera at the bottom. A big soft key sits upper camera-left, an overhead softbox above the can, a diffuse-only fill front-right, two rim strips behind the can, a narrow key strip front-left seen only in reflections, a lid card behind the camera and a pool of light on the backdrop.">
+        <path d="M40 60 Q260 10 480 60" fill="none" stroke="#3B3F47" stroke-width="18" opacity="0.6"/>
+        <text x="200" y="36" class="lbl2">back pool (cyc only)</text>
+        <rect x="200" y="125" width="120" height="120" fill="none" stroke="#9AA1AA" stroke-dasharray="5 5"/>
+        <text x="326" y="134" class="lbl2">top softbox</text>
+        <circle cx="260" cy="200" r="22" fill="#3475D6" stroke="#ECEEF1" stroke-width="2"/>
+        <text x="260" y="244" text-anchor="middle">can</text>
+        <rect x="248" y="390" width="24" height="16" class="lamp"/><polygon points="252,390 268,390 276,378 244,378" class="lamp"/>
+        <text x="260" y="424" text-anchor="middle">camera 85 mm</text>
+        <rect x="150" y="430" width="220" height="10" class="soft"/>
+        <text x="380" y="440" class="lbl2">lid card, behind camera</text>
+        <rect x="100" y="270" width="90" height="16" class="soft" transform="rotate(-40 145 278)"/>
+        <text x="30" y="330">key soft &minus;50&deg;</text><text class="lbl2" x="30" y="344">the sculpting light</text>
+        <rect x="360" y="380" width="110" height="12" class="soft" transform="rotate(34 415 386)"/>
+        <text x="372" y="352">fill +34&deg;</text><text class="lbl2" x="372" y="366">diffuse only</text>
+        <g class="lamp"><rect x="183" y="232" width="8" height="30" transform="rotate(-62 187 247)"/></g>
+        <text x="60" y="246">key strip &minus;62&deg;</text><text class="lbl2" x="60" y="260">reflection only</text>
+        <g class="lamp"><rect x="157" y="130" width="8" height="36" transform="rotate(-118 161 148)"/><rect x="349" y="120" width="8" height="36" transform="rotate(124 353 138)"/></g>
+        <text x="60" y="120">rim &minus;118&deg;</text><text x="392" y="112">rim +124&deg;</text>
+        <g stroke="#555B63" stroke-dasharray="4 4"><line x1="260" y1="200" x2="145" y2="296"/><line x1="260" y1="200" x2="386" y2="387"/><line x1="260" y1="200" x2="260" y2="380"/></g>
+      </svg>
+      <div class="stack">
+        <p class="lead">Highlights and exposure are lit separately. One big soft key from upper camera-left does the modelling; a narrow strip at &minus;62&deg; is visible only in reflections, so it draws the crisp vertical stripe across the first letters of the logotype without flooding the label.</p>
+        <p>Two rim strips behind the can carve its edges out of the charcoal and give the bare metal something to reflect. The fill is diffuse only, so it lifts the shadow side without adding a second stripe. A pool of light on the backdrop sits behind the product and nowhere else.</p>
+        <p class="mono muted">Sweep #202022. A strip at angle &phi; from the camera lands its highlight at &phi;/2 on the cylinder. Tone mapping: Khronos PBR Neutral, chosen to keep brand hex values honest.</p>
+      </div>
+    </div>
+    <div class="envs">
+      <div><b>Studio scenes</b><span class="muted">The dark rig, plus a photo-studio HDRI in the glossy rays only, turned to the key's direction, so the metal reflects a real room.</span></div>
+      <div><b>The ledge</b><span class="muted">A sunset HDRI turned so its sun sits where the sun lamp is, with a matched physical sky in frame.</span></div>
+      <div><b>The interior</b><span class="muted">A hotel-room HDRI with its window at the desk lamp's side; the lamp is the principal light, f/8 at 0.68 m.</span></div>
+    </div>
+    <div class="gallery">
+      <img src="img/hero_hermetic.jpg" alt="Hermetic can on the charcoal sweep with a vertical highlight stripe.">
+      <img src="img/hero_absurdist.jpg" alt="Absurdist can on the charcoal sweep.">
+      <img src="img/hero_stoic.jpg" alt="Stoic can on the charcoal sweep.">
+      <img src="img/hero_nihilist.jpg" alt="Nihilist can on the charcoal sweep.">
+    </div>
+  </div>
+</section>
+
+<hr>
+
+<section id="voice">
+  <div class="wrap">
+    <span class="eyebrow">Voice</span>
+    <h2 style="margin-top:12px">Flatter the reader. Roast the universe.</h2>
+    <div class="voice">
+      <blockquote>You noticed the pattern. Of course you did.<small>Hermetic &middot; ego line</small></blockquote>
+      <blockquote>Life is meaningless. Your taste in drinks isn't.<small>Absurdist &middot; ego line</small></blockquote>
+      <blockquote>You're not stressed. You're thinking at a higher resolution.<small>Stoic &middot; ego line</small></blockquote>
+      <blockquote>Nothing matters. You knew that before it was cool.<small>Nihilist &middot; ego line</small></blockquote>
+    </div>
+    <div class="dodont">
+      <div><h3>Do</h3><ul><li>Write like a footnote that thinks it's the main text.</li><li>Quote the philosopher, then undercut them with a beverage fact.</li><li>Use fake nutrition tables with real-looking precision: 1.618 %, 110 %, undefined.</li><li>Keep the reader in on the joke and on the winning side of it.</li></ul></div>
+      <div><h3>Don't</h3><ul><li>Mock the reader, their intelligence or their taste.</li><li>Promise real mood, health or mental-health effects.</li><li>Explain the joke or the philosophy at length.</li><li>Mix two philosophies' voices on one piece.</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<hr>
+
+<section id="applications">
+  <div class="wrap">
+    <span class="eyebrow">Applications</span>
+    <h2 style="margin-top:12px">How it lands.</h2>
+    <p class="lead" style="margin-top:22px">The approved stills, then the campaign set built on them: social, posters, the billboard, the column, the four-pack.</p>
+    <div class="stills">
+      <img src="img/still_floating.jpg" alt="The Stoic and the Nihilist floating, lit by a studio HDRI.">
+      <img src="img/still_ledge.jpg" alt="Cans on a concrete ledge at sunset.">
+      <img src="img/still_interior.jpg" alt="The Stoic on a stack of philosophy books under a desk lamp.">
+      <img src="img/still_pile.jpg" alt="An overhead pile of cans.">
+      <img src="img/still_cluster.jpg" alt="A cluster of cans on the dark sweep.">
+      <img src="img/still_diagonal.jpg" alt="Diagonal rows of cans.">
+      <img src="img/still_lids.jpg" alt="Lids from overhead.">
+      <img src="img/still_whitefield.jpg" alt="The four cans on a white field.">
+    </div>
+    <div class="apps">
+      <img src="img/app_master.jpg" alt="Instagram post: CRACK OPEN A WORLDVIEW above the four-can lineup on the dark sweep.">
+      <img src="img/app_stoic_aff.jpg" alt="Instagram post: YOU'RE ALREADY ENOUGH behind the Stoic can.">
+      <img src="img/app_nih_persip.jpg" alt="Instagram post: PER SIP fake nutrition table on Void Pink with the Nihilist can.">
+      <img src="img/app_worlds.jpg" alt="Instagram post: PICK YOUR CRISIS, the four heroes in a grid.">
+      <img src="img/app_story_herm.jpg" alt="Vertical story: YOU ARE THE UNIVERSE, BUT HYDRATED above the Hermetic can.">
+      <img src="img/app_poster_abs.jpg" alt="Poster: ONE MUST IMAGINE YOU THIRSTY in black on Boulder Orange with the Absurdist can.">
+      <img src="img/app_poster_sto.jpg" alt="Poster: YOU'RE ALREADY ENOUGH on Marble Blue with the Stoic can.">
+      <img src="img/app_fourpack.jpg" alt="The four-pack in its dark ring carrier.">
+    </div>
+    <div class="ooh">
+      <img src="img/app_billboard.jpg" alt="The 16:9 banner on a floodlit billboard at dusk.">
+      <img src="img/app_column.jpg" alt="The four posters wrapped round an advertising column at dusk.">
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap row">
+    <img class="logo" src="img/studio_francisco.png" alt="Studio Francisco" style="width:200px">
+    <span class="mono muted">Philosophy Cans is a self-initiated brand and motion study by Studio Francisco. Concept, packaging, 3D, motion and copy. v13, 31 October 2026.</span>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var C = [
+    { k: 'Hermetic', n: 'Levitate', c: '#FFBD0B', b: [0.37, 0, 0.63, 1], d: 'Weightless. Long holds, slow orbits, never lands hard.' },
+    { k: 'Absurdist', n: 'Boing', c: '#FB5607', b: [0.34, 1.56, 0.64, 1], d: 'Overshoots, squashes and refuses to settle on time.' },
+    { k: 'Stoic', n: 'Settle', c: '#3475D6', b: [0.16, 1, 0.3, 1], d: 'Fast start, long precise settle, zero overshoot.' },
+    { k: 'Nihilist', n: 'Slump', c: '#FF006E', b: [0.55, 0, 1, 0.45], d: 'Sluggish start, heavy drop, then just lies there.' }
+  ];
+  var host = document.getElementById('curves');
+  C.forEach(function (e) {
+    var x1 = e.b[0], y1 = e.b[1], x2 = e.b[2], y2 = e.b[3];
+    var X = function (v) { return 20 + v * 200; }, Y = function (v) { return 190 - v * 140; };
+    var grid = '';
+    [0, 0.25, 0.5, 0.75, 1].forEach(function (g) { grid += '<line class="g" x1="20" x2="220" y1="' + Y(g) + '" y2="' + Y(g) + '"/>'; });
+    var svg = '<svg viewBox="0 0 240 240" aria-hidden="true">' + grid +
+      '<line class="h" x1="' + X(0) + '" y1="' + Y(0) + '" x2="' + X(x1) + '" y2="' + Y(y1) + '"/>' +
+      '<line class="h" x1="' + X(1) + '" y1="' + Y(1) + '" x2="' + X(x2) + '" y2="' + Y(y2) + '"/>' +
+      '<path class="c" stroke="' + e.c + '" d="M' + X(0) + ' ' + Y(0) + ' C' + X(x1) + ' ' + Y(y1) + ' ' + X(x2) + ' ' + Y(y2) + ' ' + X(1) + ' ' + Y(1) + '"/>' +
+      '<circle cx="' + X(x1) + '" cy="' + Y(y1) + '" r="5" fill="' + e.c + '"/><circle cx="' + X(x2) + '" cy="' + Y(y2) + '" r="5" fill="' + e.c + '"/>' +
+      '<text x="20" y="232" font-family="IBM Plex Mono, monospace" font-size="10" fill="currentColor">time</text></svg>';
+    var el = document.createElement('div');
+    el.className = 'curve';
+    el.innerHTML = '<span class="eyebrow">' + e.k + '</span><h3>' + e.n + '</h3>' + svg +
+      '<div class="track"><i style="background:' + e.c + ';animation-timing-function:cubic-bezier(' + e.b.join(',') + ')"></i></div>' +
+      '<span class="mono">cubic-bezier(' + e.b.join(', ') + ')</span><span class="muted" style="font-size:15px">' + e.d + '</span>';
+    host.appendChild(el);
+  });
+  var btn = document.getElementById('playbtn');
+  btn.addEventListener('click', function () {
+    var on = host.classList.toggle('play');
+    btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+    btn.textContent = on ? 'Pause curves' : 'Play curves';
+  });
+  host.classList.add('play');
+  btn.setAttribute('aria-pressed', 'true');
+  btn.textContent = 'Pause curves';
+})();
+</script>
+</body>
+</html>
