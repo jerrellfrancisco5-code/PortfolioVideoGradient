@@ -1,0 +1,428 @@
+{
+ "tori": {
+  "email_anatomy.jpg": {
+   "w": 1100,
+   "h": 6451,
+   "bytes": 1115600
+  },
+  "email_anatomy_fold.jpg": {
+   "w": 1100,
+   "h": 1375,
+   "bytes": 263014
+  },
+  "email_performance.jpg": {
+   "w": 1100,
+   "h": 7153,
+   "bytes": 1061313
+  },
+  "email_performance_fold.jpg": {
+   "w": 1100,
+   "h": 1375,
+   "bytes": 258428
+  },
+  "email_90th.jpg": {
+   "w": 1100,
+   "h": 6712,
+   "bytes": 1105041
+  },
+  "email_90th_fold.jpg": {
+   "w": 1100,
+   "h": 1375,
+   "bytes": 280159
+  },
+  "email_artist.jpg": {
+   "w": 1100,
+   "h": 8218,
+   "bytes": 1318165
+  },
+  "email_artist_fold.jpg": {
+   "w": 1100,
+   "h": 1375,
+   "bytes": 244804
+  },
+  "email_vintage.jpg": {
+   "w": 1100,
+   "h": 7202,
+   "bytes": 1301626
+  },
+  "email_vintage_fold.jpg": {
+   "w": 1100,
+   "h": 1375,
+   "bytes": 322189
+  },
+  "email_perfshirts.jpg": {
+   "w": 1100,
+   "h": 5303,
+   "bytes": 836412
+  },
+  "email_perfshirts_fold.jpg": {
+   "w": 1100,
+   "h": 1375,
+   "bytes": 279863
+  },
+  "email_seabreeze.jpg": {
+   "w": 1100,
+   "h": 8054,
+   "bytes": 1251618
+  },
+  "email_seabreeze_fold.jpg": {
+   "w": 1100,
+   "h": 1375,
+   "bytes": 207332
+  },
+  "email_keahi.jpg": {
+   "w": 1100,
+   "h": 5733,
+   "bytes": 811561
+  },
+  "email_keahi_fold.jpg": {
+   "w": 1100,
+   "h": 1375,
+   "bytes": 246297
+  },
+  "email_duke.jpg": {
+   "w": 1100,
+   "h": 8061,
+   "bytes": 1222535
+  },
+  "email_duke_fold.jpg": {
+   "w": 1100,
+   "h": 1375,
+   "bytes": 227522
+  },
+  "email_santas.jpg": {
+   "w": 1100,
+   "h": 5175,
+   "bytes": 1400995
+  },
+  "email_santas_fold.jpg": {
+   "w": 1100,
+   "h": 1375,
+   "bytes": 493857
+  },
+  "gif_bestselling.gif": {
+   "w": 560,
+   "h": 728,
+   "bytes": 1550148
+  },
+  "gif_vintage.gif": {
+   "w": 560,
+   "h": 575,
+   "bytes": 397762
+  },
+  "ad_tilecabana_1_4x5.jpg": {
+   "w": 1080,
+   "h": 1350,
+   "bytes": 257904
+  },
+  "ad_tilecabana_2_4x5.jpg": {
+   "w": 1080,
+   "h": 1350,
+   "bytes": 247512
+  },
+  "ad_tilecabana_1_9x16.jpg": {
+   "w": 1080,
+   "h": 1920,
+   "bytes": 351693
+  },
+  "ad_tilecabana_2_9x16.jpg": {
+   "w": 1080,
+   "h": 1920,
+   "bytes": 394397
+  },
+  "ad_tilecabana_gif_4x5.mp4": {
+   "bytes": 6076161
+  },
+  "social_apana_1x1.jpg": {
+   "w": 1080,
+   "h": 1080,
+   "bytes": 293636
+  },
+  "social_apana_4x5.jpg": {
+   "w": 1080,
+   "h": 1350,
+   "bytes": 357796
+  },
+  "social_apana_9x16.jpg": {
+   "w": 1080,
+   "h": 1920,
+   "bytes": 513551
+  },
+  "sign_door_storefront.jpg": {
+   "w": 1600,
+   "h": 1200,
+   "bytes": 336794
+  },
+  "sign_door_closeup.jpg": {
+   "w": 960,
+   "h": 1120,
+   "bytes": 169445
+  },
+  "tag_fender.jpg": {
+   "w": 1600,
+   "h": 1236,
+   "bytes": 150812
+  },
+  "pdp_jacket_front.jpg": {
+   "w": 1080,
+   "h": 1350,
+   "bytes": 103259
+  },
+  "pdp_jacket_back.jpg": {
+   "w": 1080,
+   "h": 1350,
+   "bytes": 85137
+  },
+  "pdp_jacket_label.jpg": {
+   "w": 1080,
+   "h": 1350,
+   "bytes": 210630
+  },
+  "pdp_jacket_stripe.jpg": {
+   "w": 1080,
+   "h": 1350,
+   "bytes": 203240
+  },
+  "hero_emails.jpg": {
+   "w": 2000,
+   "h": 821
+  }
+ },
+ "cans": {
+  "lineup_dark.jpg": {
+   "w": 2000,
+   "h": 1125,
+   "bytes": 178008
+  },
+  "lineup_light.jpg": {
+   "w": 2000,
+   "h": 1125,
+   "bytes": 143025
+  },
+  "hero_hermetic.jpg": {
+   "w": 1200,
+   "h": 1500,
+   "bytes": 81414
+  },
+  "hero_absurdist.jpg": {
+   "w": 1200,
+   "h": 1500,
+   "bytes": 85594
+  },
+  "hero_stoic.jpg": {
+   "w": 1200,
+   "h": 1500,
+   "bytes": 81933
+  },
+  "hero_nihilist.jpg": {
+   "w": 1200,
+   "h": 1500,
+   "bytes": 84633
+  },
+  "billboard.jpg": {
+   "w": 1920,
+   "h": 1080,
+   "bytes": 136227
+  },
+  "column.jpg": {
+   "w": 1400,
+   "h": 1867,
+   "bytes": 149652
+  },
+  "fourpack.jpg": {
+   "w": 1400,
+   "h": 1750,
+   "bytes": 155740
+  },
+  "poster_hermetic.jpg": {
+   "w": 1200,
+   "h": 1800,
+   "bytes": 145108
+  },
+  "poster_absurdist.jpg": {
+   "w": 1200,
+   "h": 1800,
+   "bytes": 146338
+  },
+  "poster_stoic.jpg": {
+   "w": 1200,
+   "h": 1800,
+   "bytes": 125999
+  },
+  "poster_nihilist.jpg": {
+   "w": 1200,
+   "h": 1800,
+   "bytes": 132682
+  },
+  "banner.jpg": {
+   "w": 1920,
+   "h": 1080,
+   "bytes": 141779
+  },
+  "ig_master.jpg": {
+   "w": 1080,
+   "h": 1350,
+   "bytes": 140742
+  },
+  "ig_fourworlds.jpg": {
+   "w": 1080,
+   "h": 1350,
+   "bytes": 119222
+  },
+  "ig_absurdist_aff.jpg": {
+   "w": 1080,
+   "h": 1350,
+   "bytes": 105628
+  },
+  "ig_hermetic_aff.jpg": {
+   "w": 1080,
+   "h": 1350,
+   "bytes": 102642
+  },
+  "ig_stoic_persip.jpg": {
+   "w": 1080,
+   "h": 1350,
+   "bytes": 98910
+  },
+  "ig_nihilist_persip.jpg": {
+   "w": 1080,
+   "h": 1350,
+   "bytes": 94666
+  },
+  "story_nihilist.jpg": {
+   "w": 1080,
+   "h": 1920,
+   "bytes": 101921
+  },
+  "story_hermetic.jpg": {
+   "w": 1080,
+   "h": 1920,
+   "bytes": 93296
+  },
+  "still_pile.jpg": {
+   "w": 1600,
+   "h": 1600,
+   "bytes": 345247
+  },
+  "still_lids.jpg": {
+   "w": 1600,
+   "h": 1600,
+   "bytes": 323616
+  },
+  "still_diagonal.jpg": {
+   "w": 1600,
+   "h": 1600,
+   "bytes": 531818
+  },
+  "still_cluster.jpg": {
+   "w": 1600,
+   "h": 900,
+   "bytes": 131733
+  },
+  "still_interior.jpg": {
+   "w": 1200,
+   "h": 1500,
+   "bytes": 119726
+  },
+  "still_floating.jpg": {
+   "w": 1600,
+   "h": 900,
+   "bytes": 87300
+  },
+  "still_ledge.jpg": {
+   "w": 1600,
+   "h": 900,
+   "bytes": 98638
+  },
+  "still_whitefield.jpg": {
+   "w": 1600,
+   "h": 900,
+   "bytes": 39519
+  },
+  "label_hermetic.jpg": {
+   "w": 1600,
+   "h": 1162,
+   "bytes": 158693
+  },
+  "label_absurdist.jpg": {
+   "w": 1600,
+   "h": 1162,
+   "bytes": 182226
+  },
+  "label_stoic.jpg": {
+   "w": 1600,
+   "h": 1162,
+   "bytes": 167728
+  },
+  "label_nihilist.jpg": {
+   "w": 1600,
+   "h": 1162,
+   "bytes": 173795
+  },
+  "face_hermetic.png": {
+   "w": 900,
+   "h": 900,
+   "bytes": 36498
+  },
+  "face_absurdist.png": {
+   "w": 900,
+   "h": 900,
+   "bytes": 37418
+  },
+  "face_stoic.png": {
+   "w": 900,
+   "h": 900,
+   "bytes": 34896
+  },
+  "face_nihilist.png": {
+   "w": 900,
+   "h": 900,
+   "bytes": 37001
+  },
+  "faces_contact.jpg": {
+   "w": 1200,
+   "h": 900,
+   "bytes": 59509
+  },
+  "sketch_1.jpg": {
+   "w": 1400,
+   "h": 1867,
+   "bytes": 275756
+  },
+  "sketch_2.jpg": {
+   "w": 1400,
+   "h": 1867,
+   "bytes": 296473
+  },
+  "sketch_3.jpg": {
+   "w": 1400,
+   "h": 1867,
+   "bytes": 272946
+  },
+  "sketch_4.jpg": {
+   "w": 1400,
+   "h": 1867,
+   "bytes": 272905
+  },
+  "sketch_5.jpg": {
+   "w": 1400,
+   "h": 1867,
+   "bytes": 493912
+  },
+  "book_worlds.jpg": {
+   "w": 900,
+   "h": 1125,
+   "bytes": 95901
+  },
+  "reel_contact.jpg": {
+   "w": 1600,
+   "h": 450,
+   "bytes": 134901
+  },
+  "gif_absurdist_boing.gif": {
+   "w": 540,
+   "h": 675,
+   "bytes": 2705794
+  }
+ }
+}
