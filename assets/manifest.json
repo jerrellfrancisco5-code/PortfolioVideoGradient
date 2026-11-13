@@ -606,6 +606,26 @@
   },
   "PhilosophyCans_BrandBook.pdf": {
    "bytes": 2907758
+  },
+  "sk_final_hermetic.jpg": {
+   "w": 1400,
+   "h": 1400,
+   "bytes": 52045
+  },
+  "sk_final_absurdist.jpg": {
+   "w": 1400,
+   "h": 1400,
+   "bytes": 82080
+  },
+  "sk_final_stoic.jpg": {
+   "w": 1400,
+   "h": 1400,
+   "bytes": 72893
+  },
+  "sk_final_nihilist.jpg": {
+   "w": 1400,
+   "h": 1400,
+   "bytes": 73555
   }
  }
 }
