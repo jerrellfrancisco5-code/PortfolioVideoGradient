@@ -583,6 +583,29 @@
    "w": 1400,
    "h": 1400,
    "bytes": 156814
+  },
+  "reels/reel_16x9.mp4": {
+   "w": 1280,
+   "h": 720,
+   "bytes": 4079149
+  },
+  "reels/reel_16x9_poster.jpg": {
+   "w": 1280,
+   "h": 720,
+   "bytes": 54643
+  },
+  "reels/reel_9x16.mp4": {
+   "w": 720,
+   "h": 1280,
+   "bytes": 3244039
+  },
+  "reels/reel_9x16_poster.jpg": {
+   "w": 720,
+   "h": 1280,
+   "bytes": 35190
+  },
+  "PhilosophyCans_BrandBook.pdf": {
+   "bytes": 2907758
   }
  }
 }
