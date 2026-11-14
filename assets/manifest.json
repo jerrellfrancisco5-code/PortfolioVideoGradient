@@ -630,22 +630,22 @@
   "motion/anim_hermetic.mp4": {
    "w": 720,
    "h": 720,
-   "bytes": 68274
+   "bytes": 56390
   },
   "motion/anim_absurdist.mp4": {
    "w": 720,
    "h": 720,
-   "bytes": 206440
+   "bytes": 228255
   },
   "motion/anim_stoic.mp4": {
    "w": 720,
    "h": 720,
-   "bytes": 200840
+   "bytes": 209499
   },
   "motion/anim_nihilist.mp4": {
    "w": 720,
    "h": 720,
-   "bytes": 158564
+   "bytes": 176978
   }
  },
  "covers": {
