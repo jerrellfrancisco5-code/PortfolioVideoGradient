@@ -163,7 +163,9 @@ cans = {
         "The twelve expressions are the wrap. Point to how you feel and the can answers."
       ],
       'mosaic': mosaic([cm('sk_final_hermetic.jpg', 3, 3), cm('sk_final_absurdist.jpg', 3, 3), cm('sk_final_stoic.jpg', 3, 3), cm('sk_final_nihilist.jpg', 3, 3),
-                        cm('face_hermetic.png', 3, 3), cm('face_absurdist.png', 3, 3), cm('face_stoic.png', 3, 3), cm('face_nihilist.png', 3, 3)]) },
+                        cm('face_hermetic.png', 3, 3), cm('face_absurdist.png', 3, 3), cm('face_stoic.png', 3, 3), cm('face_nihilist.png', 3, 3),
+                        # sketch -> vector -> motion: the six-second expression loops, same order, same row rhythm
+                        lp('motion/anim_hermetic.mp4', 3, 3), lp('motion/anim_absurdist.mp4', 3, 3), lp('motion/anim_stoic.mp4', 3, 3), lp('motion/anim_nihilist.mp4', 3, 3)]) },
     { 'title': 'The label', 'sub': 'Color that melts into metal',
       'body': [
         "The print runs from just above the chime to the top of the neck. The color sits solid at the top of the can, falls down the label and dissolves softly into bare aluminum at the base, so the metal is part of the design instead of something the label hides. A white medallion carries the face, the wordmark is set in my own lettering, and a band line runs round the shoulder: ZERO DOUBT, ZERO MEANING, ZERO COMPLAINTS, ZERO POINT.",
@@ -346,13 +348,15 @@ must("  sizeMosaics(); window.addEventListener('resize', sizeMosaics); setTimeou
     if ('IntersectionObserver' in window) { var o = new IntersectionObserver(function (es) { if (es[0].isIntersecting) start(); else v.pause(); }, { rootMargin: '200px 0px' }); o.observe(v); } else start();
   });
 """)
-# which loop each existing project uses: the home-carousel preview where one exists, otherwise the case study's own video
-must("      preview: '68a676f89cc37dc9e68ba9e9/CJLYRAPi9ToF1zFHWNehi',", "      preview: '68a676f89cc37dc9e68ba9e9/CJLYRAPi9ToF1zFHWNehi', motion: 'hls:68a676f89cc37dc9e68ba9e9/CJLYRAPi9ToF1zFHWNehi',")
-must("      preview: '69ae0d496bac13926469e736/0dQnfK8KSDPNWgRWEedDS',", "      preview: '69ae0d496bac13926469e736/0dQnfK8KSDPNWgRWEedDS', motion: 'hls:69ae0d496bac13926469e736/0dQnfK8KSDPNWgRWEedDS',")
-must("      preview: '68a78fb32bbc7c33c46c39a6/_djUVxZcNqDVDaigdVFSL',", "      preview: '68a78fb32bbc7c33c46c39a6/_djUVxZcNqDVDaigdVFSL', motion: 'hls:68a78fb32bbc7c33c46c39a6/_djUVxZcNqDVDaigdVFSL',")
-must("      cover: ['image-f85dda7a-baac-492b-a62f-f39d3c695d8c.png', 1047, 440],", "      cover: ['image-f85dda7a-baac-492b-a62f-f39d3c695d8c.png', 1047, 440], motion: 'hls:689d315c988d1ed8411839c9/fS4P_Iat4oReYc0pB48ge',")
-must("      cover: ['image-f6946e62-929a-4c75-819b-3ba9ad360937.webp', 1029, 440],", "      cover: ['image-f6946e62-929a-4c75-819b-3ba9ad360937.webp', 1029, 440], motion: 'hls:689d2ed71778e5504c438a3e/DM0PXW4ZfP519qP_KWSem',")
-must("      cover: ['image-c946189a-5562-4c63-82cd-d3b3d8b2d0f6.png', 1028, 432],", "      cover: ['image-c946189a-5562-4c63-82cd-d3b3d8b2d0f6.png', 1028, 432], motion: 'hls:689d333fb37ad9e95413a20e/qtOyJ7cALekn6uIZH5hvO',")
+# which loop each existing project uses: ten-second muted MP4 clips cut from the Readymag videos (assets/covers/), so no tile needs an HLS player
+# (Chrome caps simultaneous HLS/MediaSource players, which is why an all-HLS board dropped one tile)
+CV = lambda k: BASE + 'covers/' + k + '.mp4'
+must("      preview: '68a676f89cc37dc9e68ba9e9/CJLYRAPi9ToF1zFHWNehi',", "      preview: '68a676f89cc37dc9e68ba9e9/CJLYRAPi9ToF1zFHWNehi', motion: '" + CV('snow') + "',")
+must("      preview: '69ae0d496bac13926469e736/0dQnfK8KSDPNWgRWEedDS',", "      preview: '69ae0d496bac13926469e736/0dQnfK8KSDPNWgRWEedDS', motion: '" + CV('levain') + "',")
+must("      preview: '68a78fb32bbc7c33c46c39a6/_djUVxZcNqDVDaigdVFSL',", "      preview: '68a78fb32bbc7c33c46c39a6/_djUVxZcNqDVDaigdVFSL', motion: '" + CV('vr') + "',")
+must("      cover: ['image-f85dda7a-baac-492b-a62f-f39d3c695d8c.png', 1047, 440],", "      cover: ['image-f85dda7a-baac-492b-a62f-f39d3c695d8c.png', 1047, 440], motion: '" + CV('got') + "',")
+must("      cover: ['image-f6946e62-929a-4c75-819b-3ba9ad360937.webp', 1029, 440],", "      cover: ['image-f6946e62-929a-4c75-819b-3ba9ad360937.webp', 1029, 440], motion: '" + CV('hotd') + "',")
+must("      cover: ['image-c946189a-5562-4c63-82cd-d3b3d8b2d0f6.png', 1028, 432],", "      cover: ['image-c946189a-5562-4c63-82cd-d3b3d8b2d0f6.png', 1028, 432], motion: '" + CV('gilmore') + "',")
 
 name = '1_PASTE_INTO_After_body_WITH_NEW_CASE_STUDIES.html' if '--live' in sys.argv else '_preview_code.html'
 open(os.path.join(HERE, name), 'w', encoding='utf-8').write(out)

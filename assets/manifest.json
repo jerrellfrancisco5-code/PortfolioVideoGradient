@@ -626,6 +626,58 @@
    "w": 1400,
    "h": 1400,
    "bytes": 73555
+  },
+  "motion/anim_hermetic.mp4": {
+   "w": 720,
+   "h": 720,
+   "bytes": 68274
+  },
+  "motion/anim_absurdist.mp4": {
+   "w": 720,
+   "h": 720,
+   "bytes": 206440
+  },
+  "motion/anim_stoic.mp4": {
+   "w": 720,
+   "h": 720,
+   "bytes": 200840
+  },
+  "motion/anim_nihilist.mp4": {
+   "w": 720,
+   "h": 720,
+   "bytes": 158564
+  }
+ },
+ "covers": {
+  "snow.mp4": {
+   "w": 960,
+   "h": 540,
+   "bytes": 1295794
+  },
+  "levain.mp4": {
+   "w": 960,
+   "h": 540,
+   "bytes": 41594
+  },
+  "vr.mp4": {
+   "w": 960,
+   "h": 540,
+   "bytes": 1078695
+  },
+  "got.mp4": {
+   "w": 960,
+   "h": 540,
+   "bytes": 1295794
+  },
+  "hotd.mp4": {
+   "w": 960,
+   "h": 540,
+   "bytes": 1892103
+  },
+  "gilmore.mp4": {
+   "w": 960,
+   "h": 540,
+   "bytes": 772918
   }
  }
 }
