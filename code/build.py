@@ -299,7 +299,7 @@ must("    return '/' + P[r].uri;\n", "    return '/' + P[r].uri + '/';\n")
 
 # 5. the two projects, in the board order after their nearest neighbours
 must("  order: ['snow', 'itw', 'abbott', 'got', 'hotd', 'gilmore', 'lotr', 'levain', 'vr', 'legendary'],",
-     "  order: ['snow', 'itw', 'tori', 'abbott', 'got', 'hotd', 'gilmore', 'lotr', 'levain', 'cans', 'vr', 'legendary'],")
+     "  order: ['snow', 'tori', 'levain', 'cans', 'vr', 'itw', 'legendary', 'got', 'hotd', 'abbott', 'gilmore', 'lotr'],")
 must("    vr: {\n      focus: '50% 55%',",
      "    tori: " + js(tori, 2) + ",\n\n    cans: " + js(cans, 2) + ",\n\n    vr: {\n      focus: '50% 55%',")
 
@@ -547,6 +547,11 @@ must("font-size: clamp(21px, 1.7vw, 26px); line-height: 1.1; letter-spacing: .04
      "font-size: clamp(25px, 2.1vw, 33px); line-height: 1.08; letter-spacing: .035em; text-transform: uppercase; margin: 0; color: var(--ink); text-wrap: balance; }")
 must("color: #f4efe6; font-weight: 600; font-size: 11.5px; letter-spacing: .14em; text-transform: uppercase;\n  background: linear-gradient",
      "color: #f4efe6; font-weight: 700; font-size: clamp(13px, 1vw, 15px); letter-spacing: .16em; text-transform: uppercase;\n  background: linear-gradient")
+
+# home carousel leads with the same top five
+must("    selected: ['snow', 'itw', 'levain', 'vr', 'legendary'],", "    selected: ['snow', 'tori', 'levain', 'cans', 'vr'],")
+must("      snow: ['Snow Commerce · 2023', \"High-impact e-commerce design for entertainment's biggest brands\"],",
+     "      snow: ['Snow Commerce · 2023', \"High-impact e-commerce design for entertainment's biggest brands\"],\n      tori: ['Hale Tori · 2026', 'Campaign design for two heritage aloha brands'],\n      cans: ['Philosophy Cans · 2026', 'Packaging, characters, 3D and motion'],")
 
 name = '1_PASTE_INTO_After_body_WITH_NEW_CASE_STUDIES.html' if '--live' in sys.argv else '_preview_code.html'
 open(os.path.join(HERE, name), 'w', encoding='utf-8').write(out)
