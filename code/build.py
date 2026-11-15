@@ -579,6 +579,9 @@ LIGHT_CSS = """
 #jf a.tile .meta .cta::after { box-shadow: inset 0 1px 2px rgba(70,52,20,.28), inset 0 5px 9px -6px rgba(70,52,20,.30), inset 0 0 0 1px rgba(70,52,20,.12); }
 #jf a.tile .meta .cta .sq { border-radius: 999px; box-shadow: inset 0 1px 0 rgba(255,248,222,.8), inset 0 -1px 0 rgba(70,50,12,.45), 0 2px 5px rgba(70,48,10,.38); }
 #jf a.tile:hover .meta .cta .sq { border-radius: 999px; box-shadow: none; }
+/* full hover: the gold keeps a pressed-in inner shadow (warm umber at the top lip, a thin light catch along the bottom) */
+#jf a.tile .meta .cta::after { transition: box-shadow 1.1s ease; }
+#jf a.tile:hover .meta .cta::after { opacity: 1; box-shadow: inset 0 2px 3px rgba(58,38,4,.50), inset 0 9px 14px -8px rgba(58,38,4,.55), inset 0 -1px 0 rgba(255,246,214,.55), inset 0 -8px 12px -10px rgba(58,38,4,.30), inset 0 0 0 1px rgba(80,56,10,.28); }
 """
 must("#jf .tile .cover { aspect-ratio: 16 / 10; }\n", "#jf .tile .cover { aspect-ratio: 16 / 10; }\n" + LIGHT_CSS)
 
