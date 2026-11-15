@@ -614,6 +614,12 @@ must("#jf .tile .cover { aspect-ratio: 16 / 10; }\n", "#jf .tile .cover { aspect
 must("'<div class=\"who\"><img src=\"' + src(D.portrait[0], 200) + '\"", "'<div class=\"who\"><img src=\"" + BASE + "ui/portrait_sq.jpg\"")
 must("#jf .tile .cover { aspect-ratio: 16 / 10; }\n", "#jf .tile .cover { aspect-ratio: 16 / 10; }\n#jf .who.who img { width: 72px; height: 72px; flex: none; border-radius: 50%; object-fit: cover; object-position: 50% 50%; background: #f7f0ea; box-shadow: 0 0 0 1px rgba(21,18,15,.08), 0 8px 18px -10px rgba(21,18,15,.35); }\n")
 
+# 17. about photos: five pulled at Francisco's request (group sign photo, three loaves, bagels); seven remain until he picks better ones
+for _e in ["['image-6b4eb910-ec28-4fd2-963b-348d471ea5fb.jpg', 129, 140], ", "['image-fa8c3cd4-e205-4739-b7bc-f5cf50bfd4b9.jpg', 110, 108], ",
+           "['image-b4d22225-fecc-474e-84f2-b3921f373687.jpg', 86, 115], ", "['image-91a4997d-b84f-4dda-8265-63b0898ce221.jpg', 101, 90], ",
+           "['image-0ac8a410-6d4a-47a1-b32b-8c4a2d5dd8b1.jpg', 98, 88], "]:
+    must(_e, "")
+
 name = '1_PASTE_INTO_After_body_WITH_NEW_CASE_STUDIES.html' if '--live' in sys.argv else '_preview_code.html'
 open(os.path.join(HERE, name), 'w', encoding='utf-8').write(out)
 print('wrote', name, len(out), 'chars (+%d)' % (len(out) - len(src)))
