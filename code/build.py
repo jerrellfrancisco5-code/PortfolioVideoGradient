@@ -392,28 +392,26 @@ CARD_CSS = """
 #jf .tile .cover, #jf .tile .meta { position: relative; z-index: 1; }
 #jf .tile .cover { border-radius: 8px; background: #e6e2db; }
 #jf .tile .cover::after { content: ''; position: absolute; inset: 0; z-index: 2; border-radius: inherit; pointer-events: none; box-shadow: inset 0 0 0 1px rgba(21,18,15,.10), inset 0 2px 6px rgba(0,0,0,.28), inset 0 18px 36px -22px rgba(0,0,0,.45), inset 0 -14px 30px -22px rgba(0,0,0,.30); }
-#jf .tile .meta { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 12px 0 0 10px; }
-#jf .tile .meta .txt { flex: 1; min-width: 0; align-self: center; padding: 8px 0 10px; }
+#jf .tile .meta { display: flex; align-items: center; justify-content: space-between; gap: 28px; padding: 16px 6px 8px 12px; }
+#jf .tile .meta .txt { flex: 1; min-width: 0; align-self: center; padding: 2px 0 4px; }
 #jf .tile .meta h3, #jf .tile h3 { font-family: var(--serif); font-weight: 400; font-size: clamp(21px, 1.7vw, 26px); line-height: 1.1; letter-spacing: .045em; text-transform: uppercase; margin: 0; color: var(--ink); }
-#jf .tile .meta p { font-weight: 400; font-size: 13px; line-height: 1.4; letter-spacing: 0; margin: 8px 0 0; color: rgba(21,18,15,.5); text-wrap: balance; }
-/* ---- the button: a recessed track of pine silk with a spun-gold pin at the left. On hover the gold fills the whole button, left to right, the arrow riding to the far end, and the label turns ink. ---- */
-#jf .tile .meta .cta { position: relative; display: block; width: clamp(208px, 36%, 320px); height: auto; min-height: 58px; align-self: stretch; border-radius: 10px; flex: none; overflow: hidden; white-space: nowrap;
+#jf .tile .meta p { font-weight: 400; font-size: 14px; line-height: 1.4; letter-spacing: .005em; margin: 7px 0 0; color: rgba(21,18,15,.56); text-wrap: balance; }
+/* ---- the button: a recessed track of charcoal satin with a square spun-gold pin at the left. On hover the gold grows across the whole button; the arrow and label hold still and the label turns ink. ---- */
+#jf .tile .meta .cta { position: relative; display: block; width: clamp(210px, 34%, 300px); height: 64px; align-self: center; border-radius: 10px; flex: none; overflow: hidden; white-space: nowrap;
   color: #f4efe6; font-weight: 600; font-size: 11.5px; letter-spacing: .14em; text-transform: uppercase;
-  background: linear-gradient(rgba(31,60,46,.86), rgba(31,60,46,.86)), #1f3c2e url(@@UI@@silk_pine.jpg) center / cover; transition: box-shadow 1.1s ease; }
+  background: linear-gradient(rgba(27,23,20,.45), rgba(27,23,20,.45)), #1b1714 url(@@UI@@satin_ink.jpg) center / cover; transition: box-shadow 1.1s ease; }
 #jf .tile .meta .cta::after { content: ''; position: absolute; inset: 0; z-index: 3; border-radius: inherit; pointer-events: none; box-shadow: inset 0 1px 1px rgba(0,0,0,.4), inset 0 4px 8px -4px rgba(0,0,0,.45), inset 0 0 0 1px rgba(0,0,0,.2); transition: opacity 1.1s ease; }
-#jf .tile .meta .cta > span { position: absolute; inset: 0; z-index: 2; display: grid; place-items: center; padding: 0 14px 0 62px; transition: color .8s ease .2s, padding 1.1s cubic-bezier(.22,.61,.36,1); }
-#jf .tile .meta .cta .sq { position: absolute; z-index: 1; top: 5px; left: 5px; width: 48px; height: calc(100% - 10px); border-radius: 7px; font-style: normal; color: #241b06;
+#jf .tile .meta .cta > span { position: absolute; inset: 0; z-index: 2; display: grid; place-items: center; padding: 0 16px 0 70px; transition: color .8s ease .2s, padding 1.1s cubic-bezier(.22,.61,.36,1); }
+#jf .tile .meta .cta .sq { position: absolute; z-index: 1; top: 5px; left: 5px; width: 54px; height: 54px; border-radius: 7px; font-style: normal; color: #241b06;
   background: radial-gradient(90px 60px at var(--mx, 30%) 0%, rgba(255,250,232,.55), rgba(255,250,232,0) 70%), url(@@UI@@gold_spun.jpg) left center / 330px 100%;
   box-shadow: inset 0 1px 0 rgba(255,248,222,.75), inset 0 -1px 0 rgba(70,50,12,.5), 0 2px 6px rgba(0,0,0,.55);
   transition: top 1.1s cubic-bezier(.22,.61,.36,1), left 1.1s cubic-bezier(.22,.61,.36,1), width 1.1s cubic-bezier(.22,.61,.36,1), height 1.1s cubic-bezier(.22,.61,.36,1), border-radius 1.1s cubic-bezier(.22,.61,.36,1), box-shadow 1.1s ease; }
-#jf .tile .meta .cta .sq svg { position: absolute; top: 50%; left: 17px; width: 14px; height: 14px; transform: translateY(-50%); transition: left 1.1s cubic-bezier(.22,.61,.36,1); }
+#jf .tile .meta .cta .sq svg { position: absolute; top: 50%; left: 20px; width: 14px; height: 14px; transform: translateY(-50%); transition: left 1.1s cubic-bezier(.22,.61,.36,1); }
 #jf .tile:hover .meta .cta .sq { top: 0; left: 0; width: 100%; height: 100%; border-radius: 10px; box-shadow: none; }
-#jf .tile:hover .meta .cta .sq svg { left: calc(100% - 36px); }
-#jf .tile:hover .meta .cta > span { padding: 0 46px 0 14px; }
 #jf .tile:hover .meta .cta > span { color: #241b06; }
 #jf .tile:hover .meta .cta::after { opacity: 0; }
 #jf .tile:hover .meta .cta { box-shadow: 0 0 14px -2px rgba(214,180,100,.55), 0 6px 20px -8px rgba(201,162,75,.45); }
-@media (max-width: 760px) { #jf .tile .meta .cta { width: 58px; } #jf .tile .meta .cta > span { display: none; } #jf .tile:hover .meta .cta .sq svg { left: 15px; } }
+@media (max-width: 760px) { #jf .tile .meta .cta { width: 64px; } #jf .tile .meta .cta > span { display: none; } #jf .tile .meta .cta .sq svg { left: 20px; } }
 """
 must("#jf .tile .cover { aspect-ratio: 16 / 10; }\n", "#jf .tile .cover { aspect-ratio: 16 / 10; }\n" + CARD_CSS.replace("@@UI@@", BASE + "ui/"))
 must("  sizeMosaics(); window.addEventListener('resize', sizeMosaics); setTimeout(sizeMosaics, 300);\n",
@@ -546,7 +544,7 @@ must("  sizeMosaics(); window.addEventListener('resize', sizeMosaics); setTimeou
 """)
 # card type: the project name leads harder, and the button label reads at a glance
 must("font-size: clamp(21px, 1.7vw, 26px); line-height: 1.1; letter-spacing: .045em; text-transform: uppercase; margin: 0; color: var(--ink); }",
-     "font-size: clamp(25px, 2.15vw, 34px); line-height: 1.06; letter-spacing: .04em; text-transform: uppercase; margin: 0; color: var(--ink); -webkit-text-stroke: .45px currentColor; }")
+     "font-size: clamp(25px, 2.1vw, 33px); line-height: 1.08; letter-spacing: .035em; text-transform: uppercase; margin: 0; color: var(--ink); text-wrap: balance; }")
 must("color: #f4efe6; font-weight: 600; font-size: 11.5px; letter-spacing: .14em; text-transform: uppercase;\n  background: linear-gradient",
      "color: #f4efe6; font-weight: 700; font-size: clamp(13px, 1vw, 15px); letter-spacing: .16em; text-transform: uppercase;\n  background: linear-gradient")
 

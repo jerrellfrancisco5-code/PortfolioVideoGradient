@@ -13,9 +13,11 @@ S = {0: r'Why\WHY_purple.png', 1: r'Sophia\Sophia.png', 2: 'orig', 3: r'T.R.O.N\
      10: r'Swim Good\Swim Good.png', 11: 'orig', 12: r'LilFrancisco\LilFrancisco.png', 13: r'DotsAndLines\DotsandLines.png', 14: 'orig', 15: r'_Unsorted PSDs\BoosterSeat (1).psd',
      16: r'NackNostalgia\NackNostalgia-Poster.png', 17: 'orig', 18: 'orig', 19: r'_Unsorted PSDs\poster.psd', 20: 'orig', 21: r'I-Am\IAm.png', 22: 'orig',
      23: r'ForOnceInMyLife\ForOnceInMyLife_FullPoster.png', 24: r'The Flower\If Im gone by tommorrow.png', 25: r'Tears\Tearsfinal.png', 26: 'orig', 27: 'orig'}
-PAD = {26: 'black', 27: 'mirror'}   # true squares: keep the whole piece, extend the ground to 3:4
+PAD = {26: 'black'}   # 27 (cat cover) is composed separately as a tilted sleeve on black, like the Goose House mockup; do not re-export it here
+SKIP = {27}   # true squares: keep the whole piece, extend the ground to 3:4
 info = {}
 for i in range(28):
+    if i in SKIP: continue
     s = S[i]
     p = glob.glob(os.path.join(VR, 'orig', '%02d.*' % i))[0] if s == 'orig' else (s if os.path.isabs(s) else os.path.join(SRC, s))
     im = Image.open(p).convert('RGB'); w, h = im.size
