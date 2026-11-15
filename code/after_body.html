@@ -815,7 +815,7 @@ window.JF_DATA = {
       '<div class="marquee" aria-label="Clients"><div class="track"><div class="set">' + strip + '</div><div class="set" aria-hidden="true">' + strip.replace(/ role="img" aria-label="[^"]*"/g, '') + '</div></div></div></section>' +
       '<section class="sec" id="work"><div class="head-row"><div><div class="eyebrow">Selected work</div><h2 class="h2">Five projects, start here.</h2></div>' +
       '<div class="ctrls"><button class="round" type="button" data-car="-1" aria-label="Previous project">' + CHEV_L + '</button><button class="round" type="button" data-car="1" aria-label="Next project">' + CHEV_R + '</button><a class="pill ghost" href="/work">All work <span class="arr">→</span></a></div></div>' +
-      '<div class="segments" aria-hidden="true">' + segs + '</div><div class="carousel" id="jf-car">' + cards + '</div></section>' +
+      '<div class="segments" aria-hidden="true">' + segs + '</div><div class="carwrap"><div class="carousel" id="jf-car">' + cards + '</div></div></section>' +
       '<section class="sec" style="padding-top:0"><div class="head-row"><div><div class="eyebrow">Work</div><h2 class="h2">The full board.</h2></div></div><div class="board">' + ORDER.map(function (k) { return tile(k); }).join('') + '</div></section>' +
       '<section class="sec about" id="about"><div class="rv"><div class="eyebrow">About</div><h2 class="h2">I\'m Jerrell Dante\' Francisco.</h2><p class="lead">' + esc(h.bio) + '</p>' +
       '<div class="who"><img src="' + src(D.portrait[0], 200) + '" alt="Portrait of Jerrell Francisco" width="64" height="64" loading="lazy"><a class="pill ghost" href="/aboutme">More about me <span class="arr">→</span></a></div></div>' +
@@ -1269,7 +1269,12 @@ function fitPairs(scope) {
 /* the scroller clips whatever leaves its box, so it is padded out past the full reach of the card shadows (hover included) and pulled back with negative margins */
 #jf .carousel { gap: 18px; padding: 24px 48px 130px; margin: -24px -48px -112px; scroll-padding-left: 48px; }
 /* where the next card peeks in, it dissolves instead of being sliced */
-#jf .carousel { -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 26px, #000 calc(100% - 90px), transparent 100%); mask-image: linear-gradient(90deg, transparent 0, #000 26px, #000 calc(100% - 90px), transparent 100%); }
+#jf .carousel { --fade: clamp(110px, 17vw, 340px); -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 26px, #000 calc(100% - var(--fade)), rgba(0,0,0,.93) calc(100% - var(--fade) * .86), rgba(0,0,0,.78) calc(100% - var(--fade) * .70), rgba(0,0,0,.55) calc(100% - var(--fade) * .54), rgba(0,0,0,.32) calc(100% - var(--fade) * .40), rgba(0,0,0,.14) calc(100% - var(--fade) * .27), rgba(0,0,0,.04) calc(100% - var(--fade) * .15), transparent calc(100% - var(--fade) * .04)); mask-image: linear-gradient(90deg, transparent 0, #000 26px, #000 calc(100% - var(--fade)), rgba(0,0,0,.93) calc(100% - var(--fade) * .86), rgba(0,0,0,.78) calc(100% - var(--fade) * .70), rgba(0,0,0,.55) calc(100% - var(--fade) * .54), rgba(0,0,0,.32) calc(100% - var(--fade) * .40), rgba(0,0,0,.14) calc(100% - var(--fade) * .27), rgba(0,0,0,.04) calc(100% - var(--fade) * .15), transparent calc(100% - var(--fade) * .04)); }
+/* over the same stretch the card also goes out of focus: a real blur that ramps up toward the edge, so it melts instead of just thinning out */
+#jf .carwrap { position: relative; }
+#jf .carwrap::after { content: ''; position: absolute; z-index: 3; top: 2px; bottom: -70px; right: -48px; width: clamp(110px, 17vw, 340px); pointer-events: none;
+  -webkit-backdrop-filter: blur(16px); backdrop-filter: blur(16px); -webkit-mask-image: linear-gradient(90deg, transparent 0, rgba(0,0,0,.35) 30%, #000 62%); mask-image: linear-gradient(90deg, transparent 0, rgba(0,0,0,.35) 30%, #000 62%); }
+@media (max-width: 760px) { #jf .carwrap::after { right: -20px; } }
 @media (max-width: 760px) { #jf .carousel { padding-inline: 20px; margin-inline: -20px; scroll-padding-left: 20px; } }
 #jf .carousel a.tile { flex: 0 0 min(80%, 980px); scroll-snap-align: start; border-color: rgba(21,18,15,.07);
   box-shadow: inset 0 1px 0 #fff, 0 22px 44px -30px rgba(21,18,15,.5), 0 4px 12px -8px rgba(21,18,15,.18); }

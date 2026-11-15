@@ -568,7 +568,12 @@ LIGHT_CSS = """
 /* the scroller clips whatever leaves its box, so it is padded out past the full reach of the card shadows (hover included) and pulled back with negative margins */
 #jf .carousel { gap: 18px; padding: 24px 48px 130px; margin: -24px -48px -112px; scroll-padding-left: 48px; }
 /* where the next card peeks in, it dissolves instead of being sliced */
-#jf .carousel { -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 26px, #000 calc(100% - 90px), transparent 100%); mask-image: linear-gradient(90deg, transparent 0, #000 26px, #000 calc(100% - 90px), transparent 100%); }
+#jf .carousel { --fade: clamp(110px, 17vw, 340px); -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 26px, #000 calc(100% - var(--fade)), rgba(0,0,0,.93) calc(100% - var(--fade) * .86), rgba(0,0,0,.78) calc(100% - var(--fade) * .70), rgba(0,0,0,.55) calc(100% - var(--fade) * .54), rgba(0,0,0,.32) calc(100% - var(--fade) * .40), rgba(0,0,0,.14) calc(100% - var(--fade) * .27), rgba(0,0,0,.04) calc(100% - var(--fade) * .15), transparent calc(100% - var(--fade) * .04)); mask-image: linear-gradient(90deg, transparent 0, #000 26px, #000 calc(100% - var(--fade)), rgba(0,0,0,.93) calc(100% - var(--fade) * .86), rgba(0,0,0,.78) calc(100% - var(--fade) * .70), rgba(0,0,0,.55) calc(100% - var(--fade) * .54), rgba(0,0,0,.32) calc(100% - var(--fade) * .40), rgba(0,0,0,.14) calc(100% - var(--fade) * .27), rgba(0,0,0,.04) calc(100% - var(--fade) * .15), transparent calc(100% - var(--fade) * .04)); }
+/* over the same stretch the card also goes out of focus: a real blur that ramps up toward the edge, so it melts instead of just thinning out */
+#jf .carwrap { position: relative; }
+#jf .carwrap::after { content: ''; position: absolute; z-index: 3; top: 2px; bottom: -70px; right: -48px; width: clamp(110px, 17vw, 340px); pointer-events: none;
+  -webkit-backdrop-filter: blur(16px); backdrop-filter: blur(16px); -webkit-mask-image: linear-gradient(90deg, transparent 0, rgba(0,0,0,.35) 30%, #000 62%); mask-image: linear-gradient(90deg, transparent 0, rgba(0,0,0,.35) 30%, #000 62%); }
+@media (max-width: 760px) { #jf .carwrap::after { right: -20px; } }
 @media (max-width: 760px) { #jf .carousel { padding-inline: 20px; margin-inline: -20px; scroll-padding-left: 20px; } }
 #jf .carousel a.tile { flex: 0 0 min(80%, 980px); scroll-snap-align: start; border-color: rgba(21,18,15,.07);
   box-shadow: inset 0 1px 0 #fff, 0 22px 44px -30px rgba(21,18,15,.5), 0 4px 12px -8px rgba(21,18,15,.18); }
@@ -593,6 +598,7 @@ LIGHT_CSS = """
 #jf a.tile:hover .meta .cta::after { opacity: 1; box-shadow: inset 0 2px 3px rgba(58,38,4,.50), inset 0 9px 14px -8px rgba(58,38,4,.55), inset 0 -1px 0 rgba(255,246,214,.55), inset 0 -8px 12px -10px rgba(58,38,4,.30), inset 0 0 0 1px rgba(80,56,10,.28); }
 """
 must("#jf .tile .cover { aspect-ratio: 16 / 10; }\n", "#jf .tile .cover { aspect-ratio: 16 / 10; }\n" + LIGHT_CSS)
+must("</div><div class=\"carousel\" id=\"jf-car\">' + cards + '</div></section>'", "</div><div class=\"carwrap\"><div class=\"carousel\" id=\"jf-car\">' + cards + '</div></div></section>'")
 
 # 15. home intro spacing: one rhythm. label -> headline -> paragraph step up evenly (1 : 1.25), the block sits closer to the statement
 #     it introduces than to the hero above it, and the tracked label is nudged so it centres optically (tracking adds a trailing gap).
