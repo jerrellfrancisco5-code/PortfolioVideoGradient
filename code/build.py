@@ -610,8 +610,8 @@ POS_CSS = """
 """
 must("#jf .tile .cover { aspect-ratio: 16 / 10; }\n", "#jf .tile .cover { aspect-ratio: 16 / 10; }\n" + POS_CSS)
 
-# 16. home avatar: its own square crop centred on the face (assets/ui/portrait_sq.jpg), so the circle is filled and the head sits dead centre
-must("'<div class=\"who\"><img src=\"' + src(D.portrait[0], 200) + '\"", "'<div class=\"who\"><img src=\"" + BASE + "ui/portrait_sq.jpg\"")
+# 16. home avatar: its own square crop centred on the face (assets/ui/portrait_av.jpg), pulled back to head, neck and shoulders with cream air around it
+must("'<div class=\"who\"><img src=\"' + src(D.portrait[0], 200) + '\"", "'<div class=\"who\"><img src=\"" + BASE + "ui/portrait_av.jpg\"")
 must("#jf .tile .cover { aspect-ratio: 16 / 10; }\n", "#jf .tile .cover { aspect-ratio: 16 / 10; }\n#jf .who.who img { width: 72px; height: 72px; flex: none; border-radius: 50%; object-fit: cover; object-position: 50% 50%; background: #f7f0ea; box-shadow: 0 0 0 1px rgba(21,18,15,.08), 0 8px 18px -10px rgba(21,18,15,.35); }\n")
 
 # 17. about photos: five pulled at Francisco's request (group sign photo, three loaves, bagels); seven remain until he picks better ones
