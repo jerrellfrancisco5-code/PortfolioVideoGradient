@@ -1260,6 +1260,11 @@ function fitPairs(scope) {
 /* project cards: 16:10 suits the wide covers; each cover carries its own focal point (focus: in the data) */
 #jf .tile .cover { aspect-ratio: 16 / 10; }
 
+#jf section.sec.positioning { padding-top: clamp(64px, 8vw, 120px); padding-bottom: clamp(44px, 5.2vw, 76px); }
+#jf section.positioning .eyebrow { margin-bottom: clamp(20px, 2vw, 28px); padding-left: .16em; }
+#jf section.positioning .h2 { max-width: 23ch; line-height: 1.07; }
+#jf section.positioning p { margin-top: clamp(24px, 2.5vw, 36px); max-width: 44ch; line-height: 1.6; }
+
 /* ---- home carousel: the board's white card, one per slide, sitting straight on the page ---- */
 #jf .carousel { gap: 18px; padding: 8px 4px 48px; margin: -8px -4px -30px; }
 #jf .carousel a.tile { flex: 0 0 min(80%, 980px); scroll-snap-align: start; border-color: rgba(21,18,15,.07);

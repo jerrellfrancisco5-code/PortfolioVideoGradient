@@ -590,6 +590,16 @@ LIGHT_CSS = """
 """
 must("#jf .tile .cover { aspect-ratio: 16 / 10; }\n", "#jf .tile .cover { aspect-ratio: 16 / 10; }\n" + LIGHT_CSS)
 
+# 15. home intro spacing: one rhythm. label -> headline -> paragraph step up evenly (1 : 1.25), the block sits closer to the statement
+#     it introduces than to the hero above it, and the tracked label is nudged so it centres optically (tracking adds a trailing gap).
+POS_CSS = """
+#jf section.sec.positioning { padding-top: clamp(64px, 8vw, 120px); padding-bottom: clamp(44px, 5.2vw, 76px); }
+#jf section.positioning .eyebrow { margin-bottom: clamp(20px, 2vw, 28px); padding-left: .16em; }
+#jf section.positioning .h2 { max-width: 23ch; line-height: 1.07; }
+#jf section.positioning p { margin-top: clamp(24px, 2.5vw, 36px); max-width: 44ch; line-height: 1.6; }
+"""
+must("#jf .tile .cover { aspect-ratio: 16 / 10; }\n", "#jf .tile .cover { aspect-ratio: 16 / 10; }\n" + POS_CSS)
+
 name = '1_PASTE_INTO_After_body_WITH_NEW_CASE_STUDIES.html' if '--live' in sys.argv else '_preview_code.html'
 open(os.path.join(HERE, name), 'w', encoding='utf-8').write(out)
 print('wrote', name, len(out), 'chars (+%d)' % (len(out) - len(src)))
