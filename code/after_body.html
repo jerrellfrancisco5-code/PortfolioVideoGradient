@@ -1266,7 +1266,11 @@ function fitPairs(scope) {
 #jf section.positioning p { margin-top: clamp(24px, 2.5vw, 36px); max-width: 44ch; line-height: 1.6; }
 
 /* ---- home carousel: the board's white card, one per slide, sitting straight on the page ---- */
-#jf .carousel { gap: 18px; padding: 8px 4px 48px; margin: -8px -4px -30px; }
+/* the scroller clips whatever leaves its box, so it is padded out past the full reach of the card shadows (hover included) and pulled back with negative margins */
+#jf .carousel { gap: 18px; padding: 24px 48px 130px; margin: -24px -48px -112px; scroll-padding-left: 48px; }
+/* where the next card peeks in, it dissolves instead of being sliced */
+#jf .carousel { -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 26px, #000 calc(100% - 90px), transparent 100%); mask-image: linear-gradient(90deg, transparent 0, #000 26px, #000 calc(100% - 90px), transparent 100%); }
+@media (max-width: 760px) { #jf .carousel { padding-inline: 20px; margin-inline: -20px; scroll-padding-left: 20px; } }
 #jf .carousel a.tile { flex: 0 0 min(80%, 980px); scroll-snap-align: start; border-color: rgba(21,18,15,.07);
   box-shadow: inset 0 1px 0 #fff, 0 22px 44px -30px rgba(21,18,15,.5), 0 4px 12px -8px rgba(21,18,15,.18); }
 #jf .carousel a.tile:hover { box-shadow: inset 0 1px 0 #fff, 0 34px 56px -30px color-mix(in srgb, var(--acc) 45%, #000), 0 10px 22px -14px rgba(21,18,15,.35); }
