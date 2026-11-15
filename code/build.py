@@ -620,6 +620,14 @@ for _e in ["['image-6b4eb910-ec28-4fd2-963b-348d471ea5fb.jpg', 129, 140], ", "['
            "['image-0ac8a410-6d4a-47a1-b32b-8c4a2d5dd8b1.jpg', 98, 88], "]:
     must(_e, "")
 
+# 18. card names in the bold sans (the same face as the statement block) instead of the display serif: tighter, heavier, tracked caps
+HEAD_CSS = """
+#jf a.tile.tile .meta h3 { font-family: var(--sans); font-weight: 700; font-size: clamp(17px, 1.3vw, 21px); line-height: 1.16; letter-spacing: .05em; text-transform: uppercase; text-wrap: balance; }
+#jf .carousel.carousel a.tile .meta h3 { font-size: clamp(19px, 1.65vw, 27px); letter-spacing: .045em; }
+#jf a.tile.tile .meta p { margin-top: 8px; }
+"""
+must("#jf .tile .cover { aspect-ratio: 16 / 10; }\n", "#jf .tile .cover { aspect-ratio: 16 / 10; }\n" + HEAD_CSS)
+
 name = '1_PASTE_INTO_After_body_WITH_NEW_CASE_STUDIES.html' if '--live' in sys.argv else '_preview_code.html'
 open(os.path.join(HERE, name), 'w', encoding='utf-8').write(out)
 print('wrote', name, len(out), 'chars (+%d)' % (len(out) - len(src)))
