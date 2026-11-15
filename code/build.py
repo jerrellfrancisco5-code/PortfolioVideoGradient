@@ -610,6 +610,10 @@ POS_CSS = """
 """
 must("#jf .tile .cover { aspect-ratio: 16 / 10; }\n", "#jf .tile .cover { aspect-ratio: 16 / 10; }\n" + POS_CSS)
 
+# 16. home avatar: its own square crop centred on the face (assets/ui/portrait_sq.jpg), so the circle is filled and the head sits dead centre
+must("'<div class=\"who\"><img src=\"' + src(D.portrait[0], 200) + '\"", "'<div class=\"who\"><img src=\"" + BASE + "ui/portrait_sq.jpg\"")
+must("#jf .tile .cover { aspect-ratio: 16 / 10; }\n", "#jf .tile .cover { aspect-ratio: 16 / 10; }\n#jf .who.who img { width: 72px; height: 72px; flex: none; border-radius: 50%; object-fit: cover; object-position: 50% 50%; background: #f7f0ea; box-shadow: 0 0 0 1px rgba(21,18,15,.08), 0 8px 18px -10px rgba(21,18,15,.35); }\n")
+
 name = '1_PASTE_INTO_After_body_WITH_NEW_CASE_STUDIES.html' if '--live' in sys.argv else '_preview_code.html'
 open(os.path.join(HERE, name), 'w', encoding='utf-8').write(out)
 print('wrote', name, len(out), 'chars (+%d)' % (len(out) - len(src)))
