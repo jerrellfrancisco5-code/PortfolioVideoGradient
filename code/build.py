@@ -553,6 +553,35 @@ must("    selected: ['snow', 'itw', 'levain', 'vr', 'legendary'],", "    selecte
 must("      snow: ['Snow Commerce · 2023', \"High-impact e-commerce design for entertainment's biggest brands\"],",
      "      snow: ['Snow Commerce · 2023', \"High-impact e-commerce design for entertainment's biggest brands\"],\n      tori: ['Hale Tori · 2026', 'Campaign design for two heritage aloha brands'],\n      cans: ['Philosophy Cans · 2026', 'Packaging, characters, 3D and motion'],")
 
+# 13. portrait: the green duotone headshot (assets/ui/portrait.jpg, 4:5, on the site's cream), used on About and as the small home avatar
+must("  portrait: ['image-43eef762-3214-43a3-b25f-0e5dde8d47e6.png', 208, 231],", "  portrait: ['" + BASE + "ui/portrait.jpg', 1000, 1250],")
+
+# 14. home "Selected work" uses the same white satin cards as the board (one card per slide), and the button goes light:
+#     a cream pill with a round spun-gold pin. On hover the gold still grows across the whole pill; the label stays ink throughout.
+must("  function tile(k, sizes) {\n    var p = P[k];", "  function tile(k, sizes, sub) {\n    var p = P[k];")
+must("'</h3><p>' + esc(p.name === p.cardTitle ? p.cardEyebrow : p.cardTitle) + '</p></div><span class=\"cta\"",
+     "'</h3><p>' + esc(sub || (p.name === p.cardTitle ? p.cardEyebrow : p.cardTitle)) + '</p></div><span class=\"cta\"")
+must("      return '<a class=\"proj\" href=\"' + href(k) + '\"' + (p.preview ? ' data-preview=\"' + p.preview + '\"' : '') + '>' + img(p.cover, '', '(max-width: 760px) 90vw, 1000px', 'bg', false, p.focus) +\n        '<div><div class=\"eyebrow\">' + esc(c[0]) + '</div><h3>' + esc(c[1]) + '</h3></div></a>';",
+     "      return tile(k, '(max-width: 760px) 90vw, 1000px', c[1]);")
+LIGHT_CSS = """
+/* ---- home carousel: the board's white card, one per slide, sitting straight on the page ---- */
+#jf .carousel { gap: 18px; padding: 8px 4px 48px; margin: -8px -4px -30px; }
+#jf .carousel a.tile { flex: 0 0 min(80%, 980px); scroll-snap-align: start; border-color: rgba(21,18,15,.07);
+  box-shadow: inset 0 1px 0 #fff, 0 22px 44px -30px rgba(21,18,15,.5), 0 4px 12px -8px rgba(21,18,15,.18); }
+#jf .carousel a.tile:hover { box-shadow: inset 0 1px 0 #fff, 0 34px 56px -30px color-mix(in srgb, var(--acc) 45%, #000), 0 10px 22px -14px rgba(21,18,15,.35); }
+#jf .carousel a.tile .cover { aspect-ratio: 16 / 9; }
+#jf .carousel a.tile .meta { padding: 20px 10px 12px 16px; }
+#jf .carousel a.tile .meta h3 { font-size: clamp(27px, 2.5vw, 40px); }
+#jf .carousel a.tile .meta p { font-size: 15px; }
+@media (max-width: 760px) { #jf .carousel a.tile { flex-basis: 90%; } #jf .carousel a.tile .cover { aspect-ratio: 4 / 3; } }
+/* ---- the button, light: cream pill, round gold pin ---- */
+#jf a.tile .meta .cta { border-radius: 999px; color: #241b06; background: linear-gradient(180deg, #ece4d3, #f3ecde 60%, #f6f0e4); }
+#jf a.tile .meta .cta::after { box-shadow: inset 0 1px 2px rgba(70,52,20,.28), inset 0 5px 9px -6px rgba(70,52,20,.30), inset 0 0 0 1px rgba(70,52,20,.12); }
+#jf a.tile .meta .cta .sq { border-radius: 999px; box-shadow: inset 0 1px 0 rgba(255,248,222,.8), inset 0 -1px 0 rgba(70,50,12,.45), 0 2px 5px rgba(70,48,10,.38); }
+#jf a.tile:hover .meta .cta .sq { border-radius: 999px; box-shadow: none; }
+"""
+must("#jf .tile .cover { aspect-ratio: 16 / 10; }\n", "#jf .tile .cover { aspect-ratio: 16 / 10; }\n" + LIGHT_CSS)
+
 name = '1_PASTE_INTO_After_body_WITH_NEW_CASE_STUDIES.html' if '--live' in sys.argv else '_preview_code.html'
 open(os.path.join(HERE, name), 'w', encoding='utf-8').write(out)
 print('wrote', name, len(out), 'chars (+%d)' % (len(out) - len(src)))
