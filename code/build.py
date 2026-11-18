@@ -628,6 +628,11 @@ HEAD_CSS = """
 """
 must("#jf .tile .cover { aspect-ratio: 16 / 10; }\n", "#jf .tile .cover { aspect-ratio: 16 / 10; }\n" + HEAD_CSS)
 
+# 19. resume: every Resume button opens the Nov 2026 PDF (assets/Jerrell_Francisco_Resume.pdf). Served through jsDelivr, pinned to the
+#     commit, because raw.githubusercontent sends PDFs as a download instead of opening them in the browser.
+must("  resume: 'https://acrobat.adobe.com/id/urn:aaid:sc:US:555b93dc-ed3d-4360-ae01-0e42fe27424a',",
+     "  resume: 'https://cdn.jsdelivr.net/gh/jerrellfrancisco5-code/PortfolioVideoGradient@ea9242b2725b62f6984d38af8df5495b85f055cb/assets/Jerrell_Francisco_Resume.pdf',")
+
 name = '1_PASTE_INTO_After_body_WITH_NEW_CASE_STUDIES.html' if '--live' in sys.argv else '_preview_code.html'
 open(os.path.join(HERE, name), 'w', encoding='utf-8').write(out)
 print('wrote', name, len(out), 'chars (+%d)' % (len(out) - len(src)))
